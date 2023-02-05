@@ -49,6 +49,7 @@ TestResult.xml
 nunit-*.xml
 
 # Build Results of an ATL Project
+output/
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c

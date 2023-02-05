@@ -1,6 +1,6 @@
-ARG DEV_ENV_BASE_IMAGE
+ARG BUILD_ENV_BASE_IMAGE
 
-FROM ${DEV_ENV_BASE_IMAGE} AS dev-env
+FROM ${BUILD_ENV_BASE_IMAGE} AS build-env
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         ca-certificates clang clang-format cmake curl g++ gcc-multilib git \

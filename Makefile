@@ -42,24 +42,24 @@ endif
 
 include Container.mk
 
-dev_env_image := cont-dev-env:$(version)
+build_env_image := cont-cpp-build-env:$(version)
 
 container_build = $(CONTAINER_RUNTIME) build \
 	-f Containerfile \
 	$(container_build_options) \
-	--build-arg DEV_ENV_BASE_IMAGE=$(DEV_ENV_BASE_IMAGE) \
+	--build-arg BUILD_ENV_BASE_IMAGE=$(BUILD_ENV_BASE_IMAGE) \
 	.
 
 container_run = $(CONTAINER_RUNTIME) run \
-	--rm -t -h cont-dev-env -e AT_CONTAINER=true \
+	--rm -t -h $(build_env_image) -e AT_CONTAINER=true \
 	--mount type=bind,source=$(CURDIR),target=/root/$(src_dir) -w /root/$(src_dir) \
 	$(container_run_options) \
-	--pull never $(dev_env_image)
+	--pull never $(build_env_image)
 
 
-.PHONY: dev-env
-dev-env: container_build_options := -t $(dev_env_image) --target dev-env
-dev-env:
+.PHONY: build-env
+build-env: container_build_options := -t $(build_env_image) --target build-env
+build-env:
 	$(container_build)
 
 
