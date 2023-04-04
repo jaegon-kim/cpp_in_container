@@ -20,10 +20,14 @@ This will construct a container image which includes g++ compiler and libraries.
 This will build program. It will mount local directory on the cont-cpp-build-env, and build.    
 
 
-
 * make run
 
 This will run the program. It will mount local directory on the ont-cpp-build-env, and run the program.   
+
+
+* make image
+
+This will build the container image.   
 
 
 * make clean

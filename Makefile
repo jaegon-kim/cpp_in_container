@@ -3,15 +3,16 @@ version := $(file < VERSION)
 .PHONY: default
 default: build
 
-ifdef AT_CONTAINER
 src_dir := src
 output_dir := output
+project := hello
+ifdef AT_CONTAINER
+program := $(output_dir)/world
 object_dir := $(output_dir)/.o
 find = $(foreach e,$(wildcard $(1:=/*)),$(if $(filter $2,$e),$e,$(strip $(call find,$e,$2))))
 cpp_files := $(call find,$(src_dir),%.cpp)
 sources := $(filter-out %.test.cpp,$(cpp_files))
 objects := $(sources:%.cpp=$(object_dir)/%.o)
-program := $(output_dir)/$(src_dir)
 
 CXXFLAGS := -Wpedantic -Wall -Wextra -O2 -g
 CPPFLAGS := -I $(CURDIR)
@@ -39,7 +40,7 @@ $(depends):
 
 endif
 
-
+ifndef AT_CONTAINER
 include Container.mk
 
 build_env_image := cont-cpp-build-env:$(version)
@@ -48,6 +49,8 @@ container_build = $(CONTAINER_RUNTIME) build \
 	-f Containerfile \
 	$(container_build_options) \
 	--build-arg BUILD_ENV_BASE_IMAGE=$(BUILD_ENV_BASE_IMAGE) \
+	--build-arg PROJECT=$(project) \
+	--build-arg OUTPUT_DIR=$(output_dir) \
 	.
 
 container_run = $(CONTAINER_RUNTIME) run \
@@ -55,7 +58,7 @@ container_run = $(CONTAINER_RUNTIME) run \
 	--mount type=bind,source=$(CURDIR),target=/root/$(src_dir) -w /root/$(src_dir) \
 	$(container_run_options) \
 	--pull never $(build_env_image)
-
+endif
 
 .PHONY: build-env
 build-env: container_build_options := -t $(build_env_image) --target build-env
@@ -83,6 +86,14 @@ run:
 	@$(container_run) make run
 endif
 
+.PHONY: image
+image: container_build_options := -t $(project):$(version) --target image
+image:
+ifdef AT_CONTAINER
+	$(error You can't build image at container)
+else
+	$(container_build)
+endif
 
 .PHONY: clean
 ifdef AT_CONTAINER
