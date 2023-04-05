@@ -7,6 +7,7 @@ RUN apt-get update && \
         libboost-all-dev libelf-dev libfmt-dev libgtest-dev libhiredis-dev \
         libmsgsl-dev libpcap-dev libspdlog-dev liburcu-dev llvm make \
         pkg-config redis-server vim
+RUN echo /lib64 > /etc/ld.so.conf.d/lib64.conf && ldconfig
 
 FROM build-env AS binary
 ARG PROJECT
@@ -23,6 +24,7 @@ COPY --from=binary \
         /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1 \
         /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 \
     /usr/lib/x86_64-linux-gnu/
+RUN echo /lib64 > /etc/ld.so.conf.d/lib64.conf && ldconfig
 COPY --from=binary \
         /root/${PROJECT}/${OUTPUT_DIR} \
     /opt/${PROJECT}/

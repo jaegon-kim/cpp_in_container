@@ -15,7 +15,7 @@ sources := $(filter-out %.test.cpp,$(cpp_files))
 objects := $(sources:%.cpp=$(object_dir)/%.o)
 
 CXXFLAGS := -Wpedantic -Wall -Wextra -O2 -g
-CPPFLAGS := -I $(CURDIR)
+CPPFLAGS := -I $(CURDIR)/$(src_dir)
 DEPFLAGS = -MMD -MP -MT $@
 LDLIBS := -pthread -lfmt -lboost_program_options
 
