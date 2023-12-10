@@ -34,21 +34,37 @@ int parity_o_n(unsigned long long n) {
     return (int) parity;
 }
 
+// EPI p38
+int parity_o_k(unsigned long long n) {
+
+    unsigned long long parity = 0;
+    while (n) {
+        parity ^= 1;
+        n &= (n - 1); // It removes last '1' bit
+    } 
+    return (int) parity;
+}
+
 void test_count_bit() {
     std::cout << count_bit(3);
-    std::cout << "(" << parity_o_n(3) << ")" << std::endl;
+    std::cout << "(" << parity_o_n(3) << "), ";
+    std::cout << "(" << parity_o_k(3) << ")" << std::endl;
 
     std::cout << count_bit(0b010101); // binary literal
-    std::cout << "(" << parity_o_n(0b010101) << ")" << std::endl; // binary literal
+    std::cout << "(" << parity_o_n(0b010101) << "), "; // binary literal
+    std::cout << "(" << parity_o_k(0b010101) << ")" << std::endl; // binary literal
 
     std::cout << count_bit(0b111100001111);
-    std::cout << "(" << parity_o_n(0b111100001111) << ")" << std::endl;
+    std::cout << "(" << parity_o_n(0b111100001111) << "), ";
+    std::cout << "(" << parity_o_k(0b111100001111) << ")" << std::endl;
 
     std::cout << count_bit(0b111111111110);
-    std::cout << "(" << parity_o_n(0b111111111110) << ")" << std::endl;
+    std::cout << "(" << parity_o_n(0b111111111110) << "), ";
+    std::cout << "(" << parity_o_k(0b111111111110) << ")" << std::endl;
 
     std::cout << count_bit(0b111111111111);
-    std::cout << "(" << parity_o_n(0b111111111111) << ")" << std::endl;
+    std::cout << "(" << parity_o_n(0b111111111111) << "), ";
+    std::cout << "(" << parity_o_k(0b111111111111) << ")" << std::endl;
 
 }
 
