@@ -1,6 +1,7 @@
 
 #include <iostream>
 
+// EPI p35
 int count_bit(unsigned int n) {
     long num_bit = 0;
     while(n) {
@@ -17,6 +18,7 @@ void test_xor() {
     std::cout << "0 ^ 0 = " << (0 ^ 0) << std::endl;
 }
 
+// EPI p38
 int parity_o_n(unsigned long long n) {
 
     unsigned long long parity = 0;
