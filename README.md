@@ -35,3 +35,8 @@ This will build the container image.
 This will clean which was created by make(make build).    
 
  
+* (Non container build environment)
+
+sudo apt-get install -y libfmt-dev
+sudo apt-get install -y libboost-all-dev
+
