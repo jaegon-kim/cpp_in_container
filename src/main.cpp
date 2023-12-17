@@ -12,6 +12,7 @@ extern void test_div_with_bit_op();
 extern void test_pow_bit_op();
 extern void test_num_reverse();
 extern void test_palindrom_num();
+extern void test_p4_10_random_num_bit_op();
 
 int main() {
 
@@ -26,7 +27,8 @@ int main() {
     //test_div_with_bit_op();
     //test_pow_bit_op();
     //test_num_reverse();
-    test_palindrom_num();
+    //test_palindrom_num();
+    test_p4_10_random_num_bit_op();
 
     return 0;
 }
