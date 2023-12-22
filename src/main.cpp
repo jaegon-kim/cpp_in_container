@@ -12,6 +12,14 @@ extern void test_div_with_bit_op();
 extern void test_pow_bit_op();
 extern void test_num_reverse();
 extern void test_palindrom_num();
+extern void test_p4_10_random_num_bit_op();
+extern void test_p4_11_intersect_rec();
+extern void test_p5_1_dutch_flag_partition();
+extern void test_p5_2_add_one();
+extern void test_p5_3_mul_bignum();
+extern void test_p5_4_array_mv();
+extern void test_p5_5_rem_dup();
+extern void test_stock_trading();
 
 int main() {
 
@@ -26,7 +34,15 @@ int main() {
     //test_div_with_bit_op();
     //test_pow_bit_op();
     //test_num_reverse();
-    test_palindrom_num();
+    //test_palindrom_num();
+    //test_p4_10_random_num_bit_op();
+    //test_p4_11_intersect_rec();
+    //test_p5_1_dutch_flag_partition();
+    //test_p5_2_add_one();
+    //test_p5_3_mul_bignum();
+    //test_p5_4_array_mv();
+    //test_p5_5_rem_dup();
+    test_stock_trading();
 
     return 0;
 }
