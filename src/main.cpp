@@ -14,12 +14,15 @@ extern void test_num_reverse();
 extern void test_palindrom_num();
 extern void test_p4_10_random_num_bit_op();
 extern void test_p4_11_intersect_rec();
+<<<<<<< HEAD
 extern void test_p5_1_dutch_flag_partition();
 extern void test_p5_2_add_one();
 extern void test_p5_3_mul_bignum();
 extern void test_p5_4_array_mv();
 extern void test_p5_5_rem_dup();
 extern void test_stock_trading();
+=======
+>>>>>>> refs/remotes/origin/main
 
 int main() {
 
