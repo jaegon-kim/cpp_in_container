@@ -20,6 +20,7 @@ extern void test_p5_3_mul_bignum();
 extern void test_p5_4_array_mv();
 extern void test_p5_5_rem_dup();
 extern void test_stock_trading();
+extern void test_p5_7_stock_trading_twice();
 
 int main() {
 
@@ -42,7 +43,8 @@ int main() {
     //test_p5_3_mul_bignum();
     //test_p5_4_array_mv();
     //test_p5_5_rem_dup();
-    test_stock_trading();
+    //test_stock_trading();
+    test_p5_7_stock_trading_twice();
 
     return 0;
 }

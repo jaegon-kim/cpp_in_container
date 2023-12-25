@@ -59,7 +59,7 @@ trade trade_o_n(const vector<int> & v) {
     return t;
 }
 
-void test(const vector<int> & v) {
+void test_trade(const vector<int> & v) {
     trade t;
     t = trade_bf(v);
     
@@ -72,7 +72,8 @@ void test_stock_trading() {
     cout << " * " << __func__ << endl;
     cout << (int) (0x80000000) << endl; 
 
-    test(vector<int>{310, 315, 275, 295, 260, 270, 290, 230, 255, 250});
-    test(vector<int>{310, 310, 275, 275, 260, 260, 230, 230, 230});
+    test_trade(vector<int>{310, 315, 275, 295, 260, 270, 290, 230, 255, 250});
+    test_trade(vector<int>{315, 275, 295, 260, 270, 290, 230, 255, 250});
+    test_trade(vector<int>{310, 310, 275, 275, 260, 260, 230, 230, 230});
 
 }
