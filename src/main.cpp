@@ -21,6 +21,7 @@ extern void test_p5_4_array_mv();
 extern void test_p5_5_rem_dup();
 extern void test_stock_trading();
 extern void test_p5_7_stock_trading_twice();
+extern void test_p5_8_quicksort_repeat_big_small();
 
 int main() {
 
@@ -44,7 +45,8 @@ int main() {
     //test_p5_4_array_mv();
     //test_p5_5_rem_dup();
     //test_stock_trading();
-    test_p5_7_stock_trading_twice();
+    //test_p5_7_stock_trading_twice();
+    test_p5_8_quicksort_repeat_big_small();
 
     return 0;
 }

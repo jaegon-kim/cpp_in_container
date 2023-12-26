@@ -107,6 +107,23 @@ vector<int> & partition_3(size_t pivot_idx, vector<int> & a) {
     return a;
 }
 
+vector<int> & partition_4(size_t pivot_idx, vector<int> & v) {
+    int pivot = v[pivot_idx];
+    int len = v.size();
+    int s = 0;
+    int b = len -1;
+
+    while (s <= b) {
+        if (v[s] <= pivot) {
+            s++;
+        } else {
+            swap(v, s, b--);
+        }
+    }
+    return v;
+}
+
+
 
 void test_partition(size_t pivot_idx, const vector<int> & a, 
                             vector<int> & func(size_t, vector<int> &)) {
@@ -121,7 +138,7 @@ void test_partition(size_t pivot_idx, const vector<int> & a,
     // check paritition
     for (size_t i = 0; i < len; i++) {
         if (!p) {
-            if (b[i] >= pivot) {
+            if (b[i] > pivot) {
                 p = true;
             }
         } else {
@@ -170,15 +187,18 @@ void test_p5_1_dutch_flag_partition() {
     test_partition(5, a, partition_1);
     test_partition(5, a, partition_2);
     test_partition(5, a, partition_3);
+    test_partition(5, a, partition_4);
 
     a = {3, 6, 3, 1, 9};
     test_partition(2, a, partition_1);
     test_partition(2, a, partition_2);
     test_partition(2, a, partition_3);
+    test_partition(2, a, partition_4);
 
-    for (size_t i = 0; i < 1; i++) {
+    for (size_t i = 0; i < 30; i++) {
         a = p5_1::gen_random_vec(20);
         test_partition(5, a, partition_3);
+        test_partition(5, a, partition_4);
     }
 }
 
