@@ -13,7 +13,7 @@ namespace p5_8 {
 
     vector<int> gen_random_vec(size_t len) {
         vector<int> v;
-        for (int i = 0; i< len; i++) {
+        for (size_t i = 0; i< len; i++) {
             int r = dis(gen);
             v.emplace_back(r);
         }
@@ -106,7 +106,7 @@ namespace p5_8 {
             return true;
         }
 
-        for (int i = 1; i < len; i++) {
+        for (size_t i = 1; i < len; i++) {
             if (v[i-1] > v[i]) {
                 return false;
             }
