@@ -23,6 +23,8 @@ extern void test_stock_trading();
 extern void test_p5_7_stock_trading_twice();
 extern void test_p5_8_quicksort_repeat_big_small();
 extern void test_p5_9_generate_prime();
+extern void test_p5_10_permutation_locating();
+extern void test_p5_11_permutation_next();
 
 int main() {
 
@@ -48,7 +50,9 @@ int main() {
     //test_stock_trading();
     //test_p5_7_stock_trading_twice();
     //test_p5_8_quicksort_repeat_big_small();
-    test_p5_9_generate_prime();
+    //test_p5_9_generate_prime();
+    //test_p5_10_permutation_locating();
+    test_p5_11_permutation_next();
 
     return 0;
 }
