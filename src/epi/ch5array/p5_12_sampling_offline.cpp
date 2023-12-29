@@ -4,8 +4,8 @@
 
 using namespace std;
 
-namespace p5_12 {
 
+namespace p5_12 {
 
     template <typename T>
     void dump(const vector<T> &v, bool nl) {
@@ -21,7 +21,7 @@ namespace p5_12 {
     }
 
     template <typename T>
-    void swap(vector<T> v, int i, int j) {
+    void swap(vector<T> & v, int i, int j) {
         T tmp = v[i];
         v[i] = v[j];
         v[j] = tmp;
@@ -33,13 +33,19 @@ namespace p5_12 {
 
         random_device rd;
         mt19937 gen(rd());
-
+        //uniform_int_distribution<T> dis(i, len - 1);
         size_t len = v.size();
+        uniform_int_distribution<T> dis(0, 99 );
+        //cout << "len: " << len << endl;
+        //cout << "k  : " << k << endl;
+
         for (int i = 0; i < k; i++) {
-            uniform_int_distribution<T> dis(i, len - 1);
-            size_t r = dis(gen);
-            cout << "r: " << i << endl;
-            swap<T>(v, i, r);
+            //T r = dis(gen) % (len - 1 - i) + i;
+            T r = dis(gen);
+            T t = r % (len - i) + i;
+
+            //cout << i << ") r: " << r << " % " << (len - i) << " = " << t << endl;
+            swap<T>(v, i, t);
         }
 
         return vector<T>(v.begin(), v.begin() + k);
@@ -55,11 +61,24 @@ namespace p5_12 {
 
     }
 
+    void test_generate_random() {
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<int> dis(0, 99);
+
+        for (int i = 0; i < 100; i++) {
+            cout << dis(gen) << ", ";
+        }
+        cout << endl;
+    }
+
 }
 
 void test_p5_12_sampling_offline() {
     cout << " * " << __func__ << endl;
 
     p5_12::test(vector<int>{3, 7, 5, 11, 2, 8, 13, 14, 16, 17}, 3);
+
+    //5_12::test_generate_random();
 
 }

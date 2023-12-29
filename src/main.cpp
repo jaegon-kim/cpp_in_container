@@ -27,6 +27,7 @@ extern void test_p5_10_permutation_locating();
 extern void test_p5_11_permutation_next();
 extern void test_p5_12_sampling_offline();
 extern void test_p5_13_sampling_online();
+extern void test_p5_14_random_permutation();
 
 int main() {
 
@@ -56,7 +57,8 @@ int main() {
     //test_p5_10_permutation_locating();
     //test_p5_11_permutation_next();
     //test_p5_12_sampling_offline();
-    test_p5_13_sampling_online();
+    //test_p5_13_sampling_online();
+    test_p5_14_random_permutation();
 
     return 0;
 }

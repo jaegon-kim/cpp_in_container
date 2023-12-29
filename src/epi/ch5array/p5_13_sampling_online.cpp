@@ -20,7 +20,7 @@ namespace p5_13 {
     }
 
     template <typename T>
-    void swap(vector<T> v, int i, int j) {
+    void swap(vector<T> & v, int i, int j) {
         T tmp = v[i];
         v[i] = v[j];
         v[j] = tmp;
