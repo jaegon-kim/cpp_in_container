@@ -30,6 +30,7 @@ extern void test_p5_13_sampling_online();
 extern void test_p5_14_random_permutation();
 extern void test_p5_15_random_subset();
 extern void test_p5_16_non_uniform_random();
+extern void test_p5_17_validate_sudoku_sol();
 
 int main() {
 
@@ -62,7 +63,8 @@ int main() {
     //test_p5_13_sampling_online();
     //test_p5_14_random_permutation();
     //test_p5_15_random_subset();
-    test_p5_16_non_uniform_random();
+    //test_p5_16_non_uniform_random();
+    test_p5_17_validate_sudoku_sol();
     
     return 0;
 }
