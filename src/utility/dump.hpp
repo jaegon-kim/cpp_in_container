@@ -19,6 +19,18 @@ void dump_vec(const std::vector<T> & v, bool nl) {
     }
 }
 
+template <typename K, typename V>
+void dump_map(const std::unordered_map<K, V> & m, bool nl) {
+    std::cout << "{";
+    for (std::pair<K, V> p: m) {
+        std::cout << "(" << p.first << " ," << p.second << "), ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
 
 
 #endif // __UTILITY_DUMP_HPP__
