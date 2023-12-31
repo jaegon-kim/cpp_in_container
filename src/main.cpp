@@ -31,6 +31,7 @@ extern void test_p5_14_random_permutation();
 extern void test_p5_15_random_subset();
 extern void test_p5_16_non_uniform_random();
 extern void test_p5_17_validate_sudoku_sol();
+extern void test_p5_18_read_spiral_order();
 
 int main() {
 
@@ -64,7 +65,7 @@ int main() {
     //test_p5_14_random_permutation();
     //test_p5_15_random_subset();
     //test_p5_16_non_uniform_random();
-    test_p5_17_validate_sudoku_sol();
-    
+    //test_p5_17_validate_sudoku_sol();
+    test_p5_18_read_spiral_order();
     return 0;
 }
