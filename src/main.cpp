@@ -34,6 +34,8 @@ extern void test_p5_17_validate_sudoku_sol();
 extern void test_p5_18_read_spiral_order();
 extern void test_p5_19_rotate_right();
 extern void test_p5_20_pascal_triangle();
+extern void test_p6_1_itos_stoi();
+extern void test_p6_2_base_transform();
 
 int main() {
 
@@ -70,6 +72,8 @@ int main() {
     //test_p5_17_validate_sudoku_sol();
     //test_p5_18_read_spiral_order();
     //test_p5_19_rotate_right();
-    test_p5_20_pascal_triangle();
+    //test_p5_20_pascal_triangle();
+    //test_p6_1_itos_stoi();
+    test_p6_2_base_transform();
     return 0;
 }
