@@ -31,7 +31,7 @@ namespace p6_3 {
     }
 }
 
-void p6_3_spreadsheet_colum_num() {
+void test_p6_3_spreadsheet_colum_num() {
     PRINT_FUNC_NAME;
     p6_3::test("A");
     p6_3::test("D");
