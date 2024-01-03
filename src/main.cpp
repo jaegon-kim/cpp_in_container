@@ -36,6 +36,9 @@ extern void test_p5_19_rotate_right();
 extern void test_p5_20_pascal_triangle();
 extern void test_p6_1_itos_stoi();
 extern void test_p6_2_base_transform();
+extern void p6_3_spreadsheet_colum_num();
+extern void test_p6_4_replace_rm();
+extern void test_p6_5_palindrom();
 
 int main() {
 
@@ -74,6 +77,10 @@ int main() {
     //test_p5_19_rotate_right();
     //test_p5_20_pascal_triangle();
     //test_p6_1_itos_stoi();
-    test_p6_2_base_transform();
+    //test_p6_2_base_transform();
+    //p6_3_spreadsheet_colum_num();
+    //test_p6_4_replace_rm();
+    test_p6_5_palindrom();
+
     return 0;
 }
