@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <deque>
 
 #define PRINT_FUNC_NAME { std::cout << " * " << __func__ << std::endl; }
 
@@ -19,6 +20,20 @@ void dump_vec(const std::vector<T> & v, bool nl) {
         std::cout << std::endl;
     }
 }
+
+template <typename T>
+void dump_deq(const std::deque<T> & q, bool nl) {
+    std::cout << "{";
+    size_t len = q.size();
+    for (size_t i = 0; i < len; i++) {
+        std::cout << q[i] << ", ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
 
 template <typename K, typename V>
 void dump_map(const std::unordered_map<K, V> & m, bool nl) {

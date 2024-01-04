@@ -39,6 +39,9 @@ extern void test_p6_2_base_transform();
 extern void test_p6_3_spreadsheet_colum_num();
 extern void test_p6_4_replace_rm();
 extern void test_p6_5_palindrom();
+extern void test_p6_6_reverse_word();
+extern void test_p6_7_look_and_say();
+extern void test_p6_8_roman_to_i();
 
 int main() {
 
@@ -80,7 +83,10 @@ int main() {
     //test_p6_2_base_transform();
     //test_p6_3_spreadsheet_colum_num();
     //test_p6_4_replace_rm();
-    test_p6_5_palindrom();
+    //test_p6_5_palindrom();
+    //test_p6_6_reverse_word();
+    //test_p6_7_look_and_say();
+    test_p6_8_roman_to_i();
 
     return 0;
 }
