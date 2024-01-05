@@ -42,6 +42,8 @@ extern void test_p6_5_palindrom();
 extern void test_p6_6_reverse_word();
 extern void test_p6_7_look_and_say();
 extern void test_p6_8_roman_to_i();
+extern void test_p6_9_gen_valid_ip();
+extern void test_p6_10_snake_string();
 
 int main() {
 
@@ -86,7 +88,9 @@ int main() {
     //test_p6_5_palindrom();
     //test_p6_6_reverse_word();
     //test_p6_7_look_and_say();
-    test_p6_8_roman_to_i();
+    //test_p6_8_roman_to_i();
+    //test_p6_9_gen_valid_ip();
+    test_p6_10_snake_string();
 
     return 0;
 }
