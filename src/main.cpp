@@ -46,6 +46,7 @@ extern void test_p6_9_gen_valid_ip();
 extern void test_p6_10_snake_string();
 extern void test_p6_11_string_compress();
 extern void test_p6_12_rabin_karp_search();
+extern void test_p7_0_linked_list();
 
 int main() {
 
@@ -94,7 +95,8 @@ int main() {
     //test_p6_9_gen_valid_ip();
     //test_p6_10_snake_string();
     //test_p6_11_string_compress();
-    test_p6_12_rabin_karp_search();
+    //test_p6_12_rabin_karp_search();
+    test_p7_0_linked_list();
 
     return 0;
 }
