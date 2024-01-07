@@ -47,6 +47,7 @@ extern void test_p6_10_snake_string();
 extern void test_p6_11_string_compress();
 extern void test_p6_12_rabin_karp_search();
 extern void test_p7_0_linked_list();
+extern void test_p7_1_merge_sorted_linkedlist();
 
 int main() {
 
@@ -96,7 +97,8 @@ int main() {
     //test_p6_10_snake_string();
     //test_p6_11_string_compress();
     //test_p6_12_rabin_karp_search();
-    test_p7_0_linked_list();
+    //test_p7_0_linked_list();
+    test_p7_1_merge_sorted_linkedlist();
 
     return 0;
 }
