@@ -64,7 +64,7 @@ namespace p7_1 {
 
             void dump() {
                 shared_ptr<Node<T>> node = head;
-                while(node != tail) {
+                while(node != nullptr && node != tail) {
                     cout << node->data << ", ";
                     node = node->next;
                 }
