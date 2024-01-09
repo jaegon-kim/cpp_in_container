@@ -49,6 +49,7 @@ extern void test_p6_12_rabin_karp_search();
 extern void test_p7_0_linked_list();
 extern void test_p7_1_merge_sorted_linkedlist();
 extern void test_p7_2_reverse_linked_list();
+extern void test_p7_3_cycle_detect();
 
 int main() {
 
@@ -100,7 +101,8 @@ int main() {
     //test_p6_12_rabin_karp_search();
     //test_p7_0_linked_list();
     //test_p7_1_merge_sorted_linkedlist();
-    test_p7_2_reverse_linked_list();
+    //test_p7_2_reverse_linked_list();
+    test_p7_3_cycle_detect();
 
     return 0;
 }
