@@ -50,6 +50,8 @@ extern void test_p7_0_linked_list();
 extern void test_p7_1_merge_sorted_linkedlist();
 extern void test_p7_2_reverse_linked_list();
 extern void test_p7_3_cycle_detect();
+extern void test_p7_4_overlap_check();
+extern void test_p7_5_test_overlap_check_cycle();
 
 int main() {
 
@@ -102,7 +104,9 @@ int main() {
     //test_p7_0_linked_list();
     //test_p7_1_merge_sorted_linkedlist();
     //test_p7_2_reverse_linked_list();
-    test_p7_3_cycle_detect();
+    //test_p7_3_cycle_detect();
+    //test_p7_4_overlap_check();
+    test_p7_5_test_overlap_check_cycle();
 
     return 0;
 }
