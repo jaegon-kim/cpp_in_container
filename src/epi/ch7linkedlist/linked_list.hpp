@@ -11,6 +11,9 @@ namespace p7 {
     template <typename T>
     struct Node {
         Node(T v) : data(v) {}
+        ~Node() {
+            //std::cout << "node(data:" << data << ") is deleted" << std::endl;
+        }
         T data;
         std::shared_ptr<Node<T>> next = nullptr;
     };
@@ -30,6 +33,116 @@ namespace p7 {
                 tail = new_node;
                 len++;
                 return;
+            }
+
+            void push_sorted(T v) {
+                std::shared_ptr<Node<T>> new_node = std::make_shared<Node<T>>(v);
+                //dump(true);
+                //std::cout << " adding: " << v << std::endl;
+                if (!head) {
+                    head = new_node;
+                    tail = new_node;
+                    len++;
+                    return;
+                }
+
+                if (v < head->data) {
+                    new_node->next = head;
+                    head = new_node;
+                    len++;
+                    return;
+                }
+                std::shared_ptr<Node<T>> ls_node = head; // ls_node is not null, head is already last smaller
+                while (true) {
+                    if (!ls_node->next) {
+                        break; // ls_node is tail
+                    }
+                    if ( v < ls_node->next->data) {
+                        break;
+                    }
+                    ls_node = ls_node->next;
+                }
+
+                new_node->next = ls_node->next;
+                ls_node->next = new_node;
+                if (ls_node == tail) {
+                    tail = new_node;
+                }
+                len++;
+            }
+
+            void delete_from_last(const int del_pos_from_last) {
+                int k = 1;
+                std::shared_ptr<Node<T>> k_node = head;
+                while (k < del_pos_from_last && k_node) {
+                    k++;
+                    k_node = k_node->next;
+                }
+                if (!k_node) {
+                    return;
+                }
+
+                std::shared_ptr<Node<T>> prev_node = nullptr;
+                std::shared_ptr<Node<T>> del_node = head;
+                while(k_node != tail) {
+                    k_node = k_node->next;
+                    prev_node = del_node;
+                    del_node = del_node->next;
+                }
+
+                delete_node(prev_node, del_node);
+            }
+
+            void delete_node(std::shared_ptr<Node<T>> prev_node, std::shared_ptr<Node<T>> del_node) {
+
+                if (del_node == head) { //prev_node may be null
+                    head = del_node->next;
+                } else {
+                    prev_node->next = del_node->next;
+                }
+
+                if (del_node == tail) {
+                    tail = prev_node;
+                }
+                len--;
+            }
+
+            void delete_non_last_node(std::shared_ptr<Node<T>> node) {
+                if (node == tail && node->next) {
+                    return;
+                }
+                if (node->next == tail) { 
+                    tail = node; // CAUTION !! without this, tail node will not be deleted by shared_ptr
+                }
+                node->data = node->next->data;
+                node->next = node->next->next;
+                len--;
+            }
+
+            void remove_duplicated() {
+                std::shared_ptr<Node<T>> dup_node = head;
+                std::shared_ptr<Node<T>> node = head;
+
+                if (!head) {
+                    return;
+                }
+                int dup_cnt = 0;
+                while(node) {
+                    if (dup_node->data != node->data) {
+                        dup_node->next = node;
+                        dup_node = node;
+                        len -= dup_cnt;
+                        dup_cnt = 0;
+                    } else {
+                        dup_cnt++;
+                    }
+                    node = node->next;
+                }
+                if (dup_node->data == tail->data) {
+                    dup_node->next = nullptr;
+                    tail = dup_node;
+                    len -= (dup_cnt - 1);
+                }
             }
 
             std::shared_ptr<Node<T>> get_node(size_t pos) {
@@ -112,8 +225,6 @@ namespace p7 {
                 
                 return this_node;
             }
-
-
 
             size_t last_length(std::shared_ptr<Node<T>> node) {
                 size_t len = 1;
@@ -203,11 +314,15 @@ namespace p7 {
                 std::cout << "len: " << len <<" {";
                 std::shared_ptr<Node<T>> node = head;
                 size_t cnt = 0;
-                while(node->next && cnt++ < 30) {
-                    std::cout << node->data << ", ";
-                    node = node->next;                    
+                if (node) {
+                    while(node->next && cnt++ < 30) {
+                        std::cout << node->data << ", ";
+                        node = node->next;                    
+                    }
+                    std::cout << node->data;
                 }
-                std::cout << node->data << "}";
+                std::cout << "}";
+
                 if (nl) {
                     std::cout << std::endl;
                 }
@@ -225,6 +340,16 @@ namespace p7 {
         LinkedList<T> l;
         for(size_t i = 0; i < len; i++) {
             l.push_back(v[i]);
+        }
+        return l;
+    }
+
+    template<typename T>
+    LinkedList<T> v2l_sorted(const std::vector<T> &v) {
+        size_t len = v.size();
+        LinkedList<T> l;
+        for(size_t i = 0; i < len; i++) {
+            l.push_sorted(v[i]);
         }
         return l;
     }
