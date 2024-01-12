@@ -55,6 +55,9 @@ extern void test_p7_5_test_overlap_check_cycle();
 extern void test_p7_6_delete_o_1();
 extern void test_p7_7_remove_kth_from_last();
 extern void test_p7_8_remove_duplicated();
+extern void test_p7_9_right_shift();
+extern void test_p7_10_even_odd_merge();
+extern void test_p7_11_is_palindrome();
 
 int main() {
 
@@ -110,9 +113,12 @@ int main() {
     //test_p7_3_cycle_detect();
     //test_p7_4_overlap_check();
     //test_p7_5_test_overlap_check_cycle();
-    test_p7_6_delete_o_1();
-    test_p7_7_remove_kth_from_last();
-    test_p7_8_remove_duplicated();
+    //test_p7_6_delete_o_1();
+    //test_p7_7_remove_kth_from_last();
+    //test_p7_8_remove_duplicated();
+    test_p7_9_right_shift();
+    test_p7_10_even_odd_merge();
+    test_p7_11_is_palindrome();
 
     return 0;
 }

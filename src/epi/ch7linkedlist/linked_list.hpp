@@ -35,6 +35,21 @@ namespace p7 {
                 return;
             }
 
+            void push_back(std::shared_ptr<Node<T>> new_node) {
+                if (!head) {
+                    head = new_node;
+                    tail = new_node;
+                    new_node->next = nullptr;
+                    len++;
+                    return;
+                }
+                tail->next = new_node;
+                tail = new_node;
+                tail->next = nullptr;
+                len++;
+                return;
+            }
+
             void push_sorted(T v) {
                 std::shared_ptr<Node<T>> new_node = std::make_shared<Node<T>>(v);
                 //dump(true);
@@ -288,6 +303,115 @@ namespace p7 {
                         return std::make_pair(hare, cycle_len);
                     }
                 }
+            }
+
+            void even_odd_merge() {
+                if (!head || !(head->next)) {
+                    return;
+                }
+
+                LinkedList<T> odd_list;
+                LinkedList<T> even_list;
+                std::shared_ptr<Node<T>> odd = head;
+                std::shared_ptr<Node<T>> even = head->next;
+
+                while(true) {
+                    odd_list.push_back(odd);                    
+                    odd = even->next;
+
+                    even_list.push_back(even);
+
+                    if (!odd) {
+                        break;
+                    }
+
+                    even = odd->next;
+
+                    if (!even) {
+                        break;
+                    }                   
+                }
+
+                if (odd) {
+                    odd_list.push_back(odd); 
+                }
+
+                if (even) {
+                    even_list.push_back(even);
+                }
+
+                //std::cout << " odd "; odd_list.dump(true);
+                //std::cout << " even "; even_list.dump(true);
+                head = odd_list.get_head();
+                odd_list.get_tail()->next = even_list.get_head();
+                tail = even_list.get_tail();
+            }
+
+            void reverse_until_end(
+                    std::shared_ptr<Node<T>> prior_node,
+                    std::shared_ptr<Node<T>> node) {
+                if (!node || node == tail) {
+                    return;
+                }
+
+                if (!prior_node) { // node is head case
+                    tail = node;
+                } else {
+                    prior_node->next = tail;
+                    tail = node;
+                }
+
+                std::shared_ptr<Node<T>> prev_node = nullptr;
+                std::shared_ptr<Node<T>> post_node = node->next;
+                
+                while(true) {
+                    node->next = prev_node;
+                    if (!post_node) {
+                        break;
+                    }
+                    prev_node = node;
+                    node = post_node;
+                    post_node = post_node->next;
+                }
+
+                // node will be the last node
+                if (!prior_node) {
+                    head = node;
+                }
+            }
+
+            bool is_palindrom() {
+
+                if (head == tail) {
+                    return true;
+                }
+
+                size_t pre_pos = len / 2 - 1;
+                std::shared_ptr<Node<T>> prior_node = get_node(pre_pos);
+                //std::cout << "pre_pos: " << prior_node->data << std::endl;
+
+                reverse_until_end(prior_node, prior_node->next);
+                //std::cout << " -> ";
+                //dump(false);
+
+                bool matched = true;
+                std::shared_ptr<Node<T>> n1 = head;
+                std::shared_ptr<Node<T>> n2 = prior_node -> next;
+
+                for (size_t i = 0; i <= pre_pos; i++) {
+                    if (n1->data != n2->data) {
+                        matched = false;
+                        break;
+                    }
+
+                    n1 = n1->next;
+                    n2 = n2->next;
+                }
+                reverse_until_end(prior_node, prior_node->next);
+                //std::cout << " -> ";
+                //dump(false);
+
+                return matched;
             }
 
             size_t size() {
