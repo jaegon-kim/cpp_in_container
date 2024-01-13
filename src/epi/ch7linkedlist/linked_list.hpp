@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include <utility>
+#include <optional>
 
 namespace p7 {
 
@@ -84,6 +85,18 @@ namespace p7 {
                     tail = new_node;
                 }
                 len++;
+            }
+
+            std::optional<T> pop_front() {
+                std::shared_ptr<Node<T>> node = head;
+                if (!node) {
+                    return std::nullopt;
+                }
+                head = node->next;
+                if (!head) {
+                    tail = nullptr;
+                }
+                return node->data;
             }
 
             void delete_from_last(const int del_pos_from_last) {
@@ -412,6 +425,48 @@ namespace p7 {
                 //dump(false);
 
                 return matched;
+            }
+
+            void partition(T pivot) {
+                std::shared_ptr<Node<T>> left_head = nullptr;
+                std::shared_ptr<Node<T>> left = nullptr;
+                std::shared_ptr<Node<T>> right = nullptr;
+                std::shared_ptr<Node<T>> right_head = nullptr;
+                std::shared_ptr<Node<T>> node = head;
+                if (!node) {
+                    return;
+                }
+
+                while(node) {
+                    std::shared_ptr<Node<T>> next = node->next;
+                    if (node->data <= pivot) {
+                        if (!left) {
+                            left = node;
+                            left_head = left;                            
+                        } else {
+                            left->next = node;
+                            left = node;
+                        }
+                    } else {
+                        if (!right) {
+                            right = node;
+                            right_head = right;                       
+                        } else {
+                            right->next = node;
+                            right = node;
+                        }
+                    }
+                    node->next = nullptr;
+                    node = next;                   
+                }
+                head = left_head;
+                left->next = right_head;
+                tail = right;
+                tail->next = nullptr;
+            }
+
+            bool is_empty() {
+                return (!head);
             }
 
             size_t size() {

@@ -58,6 +58,8 @@ extern void test_p7_8_remove_duplicated();
 extern void test_p7_9_right_shift();
 extern void test_p7_10_even_odd_merge();
 extern void test_p7_11_is_palindrome();
+extern void test_p7_12_list_partition();
+extern void test_p7_13_list_int_add();
 
 int main() {
 
@@ -116,9 +118,11 @@ int main() {
     //test_p7_6_delete_o_1();
     //test_p7_7_remove_kth_from_last();
     //test_p7_8_remove_duplicated();
-    test_p7_9_right_shift();
-    test_p7_10_even_odd_merge();
-    test_p7_11_is_palindrome();
+    //test_p7_9_right_shift();
+    //test_p7_10_even_odd_merge();
+    //test_p7_11_is_palindrome();
+    test_p7_12_list_partition();
+    test_p7_13_list_int_add();
 
     return 0;
 }
