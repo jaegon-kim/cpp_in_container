@@ -11,11 +11,12 @@ namespace p7 {
 
     template <typename T>
     struct Node {
-        Node(T v) : data(v) {}
+        Node(T v) : data(v), max_data() {}
         ~Node() {
             //std::cout << "node(data:" << data << ") is deleted" << std::endl;
         }
         T data;
+        T max_data;
         std::shared_ptr<Node<T>> next = nullptr;
     };
 
@@ -87,11 +88,34 @@ namespace p7 {
                 len++;
             }
 
+            void push_front(T v) {
+                std::shared_ptr<Node<T>> new_node = std::make_shared<Node<T>>(v);
+                if (!head) {
+                    head = new_node;
+                    tail = new_node;
+                    new_node->max_data = v;
+                    len++;
+                    return;
+                }
+
+                if (head->max_data > v) {
+                    new_node->max_data = head->max_data;
+                } else {
+                    new_node->max_data = v;
+                }
+
+                new_node->next = head;
+                head = new_node;
+                len++;
+                return;
+            }
+
             std::optional<T> pop_front() {
                 std::shared_ptr<Node<T>> node = head;
                 if (!node) {
                     return std::nullopt;
                 }
+                len--;
                 head = node->next;
                 if (!head) {
                     tail = nullptr;
@@ -489,6 +513,13 @@ namespace p7 {
                 tail = node;
             }
 
+            std::optional<T> get_max() {
+                if (!head) {
+                    return std::nullopt;
+                }
+                return head->max_data;
+            }
+
             void dump(bool nl) {
                 std::cout << "len: " << len <<" {";
                 std::shared_ptr<Node<T>> node = head;
@@ -508,7 +539,7 @@ namespace p7 {
             }
 
         private:
-            size_t len = 0;
+            size_t len = 0;            
             std::shared_ptr<Node<T>> head = nullptr;
             std::shared_ptr<Node<T>> tail = nullptr;
     };
