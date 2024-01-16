@@ -62,6 +62,9 @@ extern void test_p7_12_list_partition();
 extern void test_p7_13_list_int_add();
 extern void test_p8_1_max_value();
 extern void test_p8_2_calc_rpn();
+extern void test_p8_3_parenthesis();
+extern void test_p8_4_normalize_path();
+extern void test_p8_5_building_suset();
 
 int main() {
 
@@ -126,7 +129,10 @@ int main() {
     //test_p7_12_list_partition();
     //test_p7_13_list_int_add();
     //test_p8_1_max_value();
-    test_p8_2_calc_rpn();
+    //test_p8_2_calc_rpn();
+    test_p8_3_parenthesis();
+    test_p8_4_normalize_path();
+    test_p8_5_building_suset();
 
     return 0;
 }
