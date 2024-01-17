@@ -65,6 +65,8 @@ extern void test_p8_2_calc_rpn();
 extern void test_p8_3_parenthesis();
 extern void test_p8_4_normalize_path();
 extern void test_p8_5_building_suset();
+extern void test_p8_6_tree_level();
+extern void test_p8_7_circular_queue();
 
 int main() {
 
@@ -130,9 +132,11 @@ int main() {
     //test_p7_13_list_int_add();
     //test_p8_1_max_value();
     //test_p8_2_calc_rpn();
-    test_p8_3_parenthesis();
-    test_p8_4_normalize_path();
-    test_p8_5_building_suset();
-
+    //test_p8_3_parenthesis();
+    //test_p8_4_normalize_path();
+    //test_p8_5_building_suset();
+    //test_p8_6_tree_level();
+    test_p8_7_circular_queue();
+    
     return 0;
 }
