@@ -67,6 +67,8 @@ extern void test_p8_4_normalize_path();
 extern void test_p8_5_building_suset();
 extern void test_p8_6_tree_level();
 extern void test_p8_7_circular_queue();
+extern void test_p8_8_que_with_stack();
+extern void test_p8_9_que_with_max();
 
 int main() {
 
@@ -136,7 +138,9 @@ int main() {
     //test_p8_4_normalize_path();
     //test_p8_5_building_suset();
     //test_p8_6_tree_level();
-    test_p8_7_circular_queue();
+    //test_p8_7_circular_queue();
+    test_p8_8_que_with_stack();
+    test_p8_9_que_with_max();
     
     return 0;
 }
