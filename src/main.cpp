@@ -14,6 +14,7 @@ extern void test_num_reverse();
 extern void test_palindrom_num();
 extern void test_p4_10_random_num_bit_op();
 extern void test_p4_11_intersect_rec();
+extern void test_p4_tmp_1_4_align();
 extern void test_p5_1_dutch_flag_partition();
 extern void test_p5_2_add_one();
 extern void test_p5_3_mul_bignum();
@@ -69,6 +70,8 @@ extern void test_p8_6_tree_level();
 extern void test_p8_7_circular_queue();
 extern void test_p8_8_que_with_stack();
 extern void test_p8_9_que_with_max();
+extern void test_p9_1_check_balanced();
+extern void test_p9_2_check_symetric();
 
 int main() {
 
@@ -86,6 +89,7 @@ int main() {
     //test_palindrom_num();
     //test_p4_10_random_num_bit_op();
     //test_p4_11_intersect_rec();
+    test_p4_tmp_1_4_align();
     //test_p5_1_dutch_flag_partition();
     //test_p5_2_add_one();
     //test_p5_3_mul_bignum();
@@ -139,8 +143,10 @@ int main() {
     //test_p8_5_building_suset();
     //test_p8_6_tree_level();
     //test_p8_7_circular_queue();
-    test_p8_8_que_with_stack();
-    test_p8_9_que_with_max();
+    //test_p8_8_que_with_stack();
+    //test_p8_9_que_with_max();
+    test_p9_1_check_balanced();
+    test_p9_2_check_symetric();
     
     return 0;
 }
