@@ -72,6 +72,8 @@ extern void test_p8_8_que_with_stack();
 extern void test_p8_9_que_with_max();
 extern void test_p9_1_check_balanced();
 extern void test_p9_2_check_symetric();
+extern void test_p9_3_lca_no_parent_link();
+extern void test_p9_4_lca_with_parent_link();
 
 int main() {
 
@@ -89,7 +91,7 @@ int main() {
     //test_palindrom_num();
     //test_p4_10_random_num_bit_op();
     //test_p4_11_intersect_rec();
-    test_p4_tmp_1_4_align();
+    //test_p4_tmp_1_4_align();
     //test_p5_1_dutch_flag_partition();
     //test_p5_2_add_one();
     //test_p5_3_mul_bignum();
@@ -145,8 +147,10 @@ int main() {
     //test_p8_7_circular_queue();
     //test_p8_8_que_with_stack();
     //test_p8_9_que_with_max();
-    test_p9_1_check_balanced();
-    test_p9_2_check_symetric();
+    //test_p9_1_check_balanced();
+    //test_p9_2_check_symetric();
+    test_p9_3_lca_no_parent_link();
+    test_p9_4_lca_with_parent_link();
     
     return 0;
 }
