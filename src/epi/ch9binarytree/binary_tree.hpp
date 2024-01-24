@@ -10,6 +10,7 @@ template <typename T>
     struct Node {
         Node(T v) : data(v) {}
         T data;
+        size_t num_child = 0;
         shared_ptr<Node<T>> left = nullptr;
         shared_ptr<Node<T>> right = nullptr;
         shared_ptr<Node<T>> parent = nullptr;

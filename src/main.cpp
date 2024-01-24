@@ -77,6 +77,7 @@ extern void test_p9_4_lca_with_parent_link();
 extern void test_p9_5_path_bit_sum();
 extern void test_p9_6_find_same_weigh();
 extern void test_p9_7_inorder_traverse_loop();
+extern void test_p9_8_k_th_ele_in_inorder_traverse();
 
 int main() {
 
@@ -154,9 +155,10 @@ int main() {
     //test_p9_2_check_symetric();
     //test_p9_3_lca_no_parent_link();
     //test_p9_4_lca_with_parent_link();
-    test_p9_5_path_bit_sum();
-    test_p9_6_find_same_weigh();
-    test_p9_7_inorder_traverse_loop();
+    //test_p9_5_path_bit_sum();
+    //test_p9_6_find_same_weigh();
+    //test_p9_7_inorder_traverse_loop();
+    test_p9_8_k_th_ele_in_inorder_traverse();
 
     return 0;
 }
