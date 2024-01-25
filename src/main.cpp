@@ -78,6 +78,8 @@ extern void test_p9_5_path_bit_sum();
 extern void test_p9_6_find_same_weigh();
 extern void test_p9_7_inorder_traverse_loop();
 extern void test_p9_8_k_th_ele_in_inorder_traverse();
+extern void test_p9_9_successor_o_1();
+extern void test_p9_10_traverse_s_1();
 
 int main() {
 
@@ -158,7 +160,9 @@ int main() {
     //test_p9_5_path_bit_sum();
     //test_p9_6_find_same_weigh();
     //test_p9_7_inorder_traverse_loop();
-    test_p9_8_k_th_ele_in_inorder_traverse();
+    //test_p9_8_k_th_ele_in_inorder_traverse();
+    test_p9_9_successor_o_1();
+    test_p9_10_traverse_s_1();
 
     return 0;
 }
