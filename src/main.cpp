@@ -81,6 +81,7 @@ extern void test_p9_8_k_th_ele_in_inorder_traverse();
 extern void test_p9_9_successor_o_1();
 extern void test_p9_10_traverse_s_1();
 extern void test_p9_11_const_tree();
+extern void test_p9_12_const_tree_marker();
 
 int main() {
 
@@ -164,7 +165,8 @@ int main() {
     //test_p9_8_k_th_ele_in_inorder_traverse();
     //test_p9_9_successor_o_1();
     //test_p9_10_traverse_s_1();
-    test_p9_11_const_tree();
+    //test_p9_11_const_tree();
+    test_p9_12_const_tree_marker();
 
     return 0;
 }
