@@ -82,6 +82,9 @@ extern void test_p9_9_successor_o_1();
 extern void test_p9_10_traverse_s_1();
 extern void test_p9_11_const_tree();
 extern void test_p9_12_const_tree_marker();
+extern void test_p9_13_leaf_list();
+extern void test_p9_14_exterior_node();
+extern void test_p9_15_right_sibling();
 
 int main() {
 
@@ -166,7 +169,11 @@ int main() {
     //test_p9_9_successor_o_1();
     //test_p9_10_traverse_s_1();
     //test_p9_11_const_tree();
-    test_p9_12_const_tree_marker();
-
+    //test_p9_12_const_tree_marker();
+    //test_p9_13_leaf_list();
+    //test_p9_14_exterior_node();
+    test_p9_15_right_sibling();
+    
+    
     return 0;
 }

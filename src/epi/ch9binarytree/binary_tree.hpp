@@ -14,6 +14,7 @@ template <typename T>
         shared_ptr<Node<T>> left = nullptr;
         shared_ptr<Node<T>> right = nullptr;
         shared_ptr<Node<T>> parent = nullptr;
+        shared_ptr<Node<T>> next = nullptr;
     };
 
 
