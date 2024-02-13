@@ -85,6 +85,7 @@ extern void test_p9_12_const_tree_marker();
 extern void test_p9_13_leaf_list();
 extern void test_p9_14_exterior_node();
 extern void test_p9_15_right_sibling();
+extern void test_p10_heap_bootcamp();
 
 int main() {
 
@@ -172,8 +173,8 @@ int main() {
     //test_p9_12_const_tree_marker();
     //test_p9_13_leaf_list();
     //test_p9_14_exterior_node();
-    test_p9_15_right_sibling();
-    
+    //test_p9_15_right_sibling();
+    test_p10_heap_bootcamp();
     
     return 0;
 }
