@@ -86,6 +86,8 @@ extern void test_p9_13_leaf_list();
 extern void test_p9_14_exterior_node();
 extern void test_p9_15_right_sibling();
 extern void test_p10_heap_bootcamp();
+extern void test_p10_1_merge_sorted();
+extern void test_p10_2_sort_k_inc_dec_array();
 
 int main() {
 
@@ -174,7 +176,9 @@ int main() {
     //test_p9_13_leaf_list();
     //test_p9_14_exterior_node();
     //test_p9_15_right_sibling();
-    test_p10_heap_bootcamp();
+    //test_p10_heap_bootcamp();
+    //test_p10_1_merge_sorted();
+    test_p10_2_sort_k_inc_dec_array();
     
     return 0;
 }
