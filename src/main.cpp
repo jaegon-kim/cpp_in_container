@@ -88,6 +88,8 @@ extern void test_p9_15_right_sibling();
 extern void test_p10_heap_bootcamp();
 extern void test_p10_1_merge_sorted();
 extern void test_p10_2_sort_k_inc_dec_array();
+extern void test_p10_3_sort_almost_sorted();
+extern void test_p10_4_nearest_start();
 
 int main() {
 
@@ -178,7 +180,9 @@ int main() {
     //test_p9_15_right_sibling();
     //test_p10_heap_bootcamp();
     //test_p10_1_merge_sorted();
-    test_p10_2_sort_k_inc_dec_array();
+    //test_p10_2_sort_k_inc_dec_array();
+    test_p10_3_sort_almost_sorted();
+    test_p10_4_nearest_start();
     
     return 0;
 }
