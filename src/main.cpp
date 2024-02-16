@@ -90,6 +90,7 @@ extern void test_p10_1_merge_sorted();
 extern void test_p10_2_sort_k_inc_dec_array();
 extern void test_p10_3_sort_almost_sorted();
 extern void test_p10_4_nearest_start();
+extern void test_p10_5_realtime_median();
 
 int main() {
 
@@ -181,8 +182,9 @@ int main() {
     //test_p10_heap_bootcamp();
     //test_p10_1_merge_sorted();
     //test_p10_2_sort_k_inc_dec_array();
-    test_p10_3_sort_almost_sorted();
-    test_p10_4_nearest_start();
+    //test_p10_3_sort_almost_sorted();
+    //test_p10_4_nearest_start();
+    test_p10_5_realtime_median();
     
     return 0;
 }
