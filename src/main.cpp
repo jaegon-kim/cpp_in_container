@@ -92,6 +92,9 @@ extern void test_p10_3_sort_almost_sorted();
 extern void test_p10_4_nearest_start();
 extern void test_p10_5_realtime_median();
 extern void test_p10_6_max_k_in_max_heap();
+extern void test_00_binarysearch_bootcamp();
+extern void test_p11_1_first_k();
+extern void test_p11_2_same_value_with_idx();
 
 int main() {
 
@@ -186,7 +189,10 @@ int main() {
     //test_p10_3_sort_almost_sorted();
     //test_p10_4_nearest_start();
     //test_p10_5_realtime_median();
-    test_p10_6_max_k_in_max_heap();
+    //test_p10_6_max_k_in_max_heap();
+    //test_00_binarysearch_bootcamp();
+    test_p11_1_first_k();
+    test_p11_2_same_value_with_idx();
     
     return 0;
 }
