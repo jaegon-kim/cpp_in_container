@@ -95,6 +95,8 @@ extern void test_p10_6_max_k_in_max_heap();
 extern void test_00_binarysearch_bootcamp();
 extern void test_p11_1_first_k();
 extern void test_p11_2_same_value_with_idx();
+extern void test_p11_3_min_in_circular_array();
+extern void test_p11_4_max_square_root();
 
 int main() {
 
@@ -191,8 +193,10 @@ int main() {
     //test_p10_5_realtime_median();
     //test_p10_6_max_k_in_max_heap();
     //test_00_binarysearch_bootcamp();
-    test_p11_1_first_k();
-    test_p11_2_same_value_with_idx();
-    
+    //test_p11_1_first_k();
+    //test_p11_2_same_value_with_idx();
+    test_p11_3_min_in_circular_array();
+    test_p11_4_max_square_root();
+
     return 0;
 }
