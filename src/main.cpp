@@ -97,6 +97,8 @@ extern void test_p11_1_first_k();
 extern void test_p11_2_same_value_with_idx();
 extern void test_p11_3_min_in_circular_array();
 extern void test_p11_4_max_square_root();
+extern void test_p11_5_square_root_real();
+extern void test_p11_6_search_sorted_matrix();
 
 int main() {
 
@@ -195,8 +197,10 @@ int main() {
     //test_00_binarysearch_bootcamp();
     //test_p11_1_first_k();
     //test_p11_2_same_value_with_idx();
-    test_p11_3_min_in_circular_array();
-    test_p11_4_max_square_root();
+    //test_p11_3_min_in_circular_array();
+    //test_p11_4_max_square_root();
+    test_p11_5_square_root_real();
+    test_p11_6_search_sorted_matrix();
 
     return 0;
 }
