@@ -103,6 +103,7 @@ extern void test_p11_7_min_max();
 extern void test_p11_8_kth_big();
 extern void test_p11_9_missing_ip();
 extern void test_p11_10_dup_missing_ele();
+extern void test_p12_00_hashtable_boot();
 
 int main() {
 
@@ -208,7 +209,8 @@ int main() {
     //test_p11_7_min_max();
     //test_p11_8_kth_big();
     //test_p11_9_missing_ip();
-    test_p11_10_dup_missing_ele();
+    //test_p11_10_dup_missing_ele();
+    test_p12_00_hashtable_boot();
 
     return 0;
 }
