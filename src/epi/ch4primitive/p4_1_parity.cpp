@@ -21,6 +21,7 @@ namespace p4_1 {
     }
 
     // EPI p38
+    // parity는 bit 1이 홀수개 이면 1, 짝수개 이면 0 반환
     int parity_o_n(unsigned long long n) {
 
         unsigned long long parity = 0;
@@ -41,7 +42,7 @@ namespace p4_1 {
 
         unsigned long long parity = 0;
         while (n) {
-            parity ^= 1;
+            parity ^= 1; // 1, 0을 반복한다.
             n &= (n - 1); // It removes last '1' bit
         } 
         return (int) parity;

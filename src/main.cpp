@@ -102,6 +102,7 @@ extern void test_p11_6_search_sorted_matrix();
 extern void test_p11_7_min_max();
 extern void test_p11_8_kth_big();
 extern void test_p11_9_missing_ip();
+extern void test_p11_10_dup_missing_ele();
 
 int main() {
 
@@ -206,7 +207,8 @@ int main() {
     //test_p11_6_search_sorted_matrix();
     //test_p11_7_min_max();
     //test_p11_8_kth_big();
-    test_p11_9_missing_ip();
+    //test_p11_9_missing_ip();
+    test_p11_10_dup_missing_ele();
 
     return 0;
 }
