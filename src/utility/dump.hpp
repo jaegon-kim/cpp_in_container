@@ -23,6 +23,19 @@ void dump_vec(const std::vector<T> & v, bool nl) {
 }
 
 template <typename T>
+void dump_vec(const std::vector<T> & v, size_t start_idx, size_t end_idx, bool nl) {
+    std::cout << "{";
+    for (size_t i = start_idx; i <= end_idx; i++) {
+        std::cout << v[i] << ", ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
+
+template <typename T>
 void dump_list(const std::list<T> & l, bool nl) {
     std::cout << "{";
     for (auto &v: l) {
