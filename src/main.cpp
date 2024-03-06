@@ -107,6 +107,9 @@ extern void test_p12_00_hashtable_boot();
 extern void test_p12_01_check_palindrom();
 extern void test_p12_02_anony_mail_with_magazine();
 extern void test_p12_03_isbn_cache();
+extern void test_p12_04_lca_with_hash();
+extern void test_p12_05_closest_dup_str();
+extern void test_p12_06_min_sub_vect();
 
 int main() {
 
@@ -214,9 +217,12 @@ int main() {
     //test_p11_9_missing_ip();
     //test_p11_10_dup_missing_ele();
     //test_p12_00_hashtable_boot();
-    test_p12_01_check_palindrom();
-    test_p12_02_anony_mail_with_magazine();
-    test_p12_03_isbn_cache();
+    //test_p12_01_check_palindrom();
+    //test_p12_02_anony_mail_with_magazine();
+    //test_p12_03_isbn_cache();
+    test_p12_04_lca_with_hash();
+    test_p12_05_closest_dup_str();
+    test_p12_06_min_sub_vect();
 
     return 0;
 }
