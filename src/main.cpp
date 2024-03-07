@@ -110,6 +110,7 @@ extern void test_p12_03_isbn_cache();
 extern void test_p12_04_lca_with_hash();
 extern void test_p12_05_closest_dup_str();
 extern void test_p12_06_min_sub_vect();
+extern void test_p12_07_min_sub_vect_ordered();
 
 int main() {
 
@@ -220,9 +221,10 @@ int main() {
     //test_p12_01_check_palindrom();
     //test_p12_02_anony_mail_with_magazine();
     //test_p12_03_isbn_cache();
-    test_p12_04_lca_with_hash();
-    test_p12_05_closest_dup_str();
+    //test_p12_04_lca_with_hash();
+    //test_p12_05_closest_dup_str();
     test_p12_06_min_sub_vect();
+    test_p12_07_min_sub_vect_ordered();
 
     return 0;
 }

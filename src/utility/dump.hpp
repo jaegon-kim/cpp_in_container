@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <unordered_set>
 #include <deque>
 #include <list>
 
@@ -27,6 +28,20 @@ void dump_vec(const std::vector<T> & v, size_t start_idx, size_t end_idx, bool n
     std::cout << "{";
     for (size_t i = start_idx; i <= end_idx; i++) {
         std::cout << v[i] << ", ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
+
+template <typename F, typename S>
+void dump_vec_of_pair(const std::vector<std::pair<F, S>> & v, bool nl) {
+    std::cout << "{";
+    size_t len = v.size();
+    for (size_t i = 0; i < len; i++) {
+        std::cout << "(" << v[i].first << ", " << v[i].second << "), ";
     }
     std::cout << "}";
     if (nl) {
@@ -64,13 +79,26 @@ void dump_deq(const std::deque<T> & q, bool nl) {
 template <typename K, typename V>
 void dump_map(const std::unordered_map<K, V> & m, bool nl) {
     std::cout << "{";
-    for (std::pair<K, V> p: m) {
+    for (const std::pair<K, V> & p: m) {
         std::cout << "(" << p.first << " ," << p.second << "), ";
     }
     std::cout << "}";
     if (nl) {
         std::cout << std::endl;
     }
+}
+
+template <typename T>
+void dump_set(const std::unordered_set<T> & s, bool nl) {
+    std::cout << "{";
+    for (const T & e: s) {
+        std::cout << "(" << e << "), ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+
 }
 
 
