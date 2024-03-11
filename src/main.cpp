@@ -111,6 +111,8 @@ extern void test_p12_04_lca_with_hash();
 extern void test_p12_05_closest_dup_str();
 extern void test_p12_06_min_sub_vect();
 extern void test_p12_07_min_sub_vect_ordered();
+extern void test_p12_08_longest_sub_vec();
+extern void test_12_09_longest_cont_num_seq();
 
 int main() {
 
@@ -223,8 +225,10 @@ int main() {
     //test_p12_03_isbn_cache();
     //test_p12_04_lca_with_hash();
     //test_p12_05_closest_dup_str();
-    test_p12_06_min_sub_vect();
-    test_p12_07_min_sub_vect_ordered();
+    //test_p12_06_min_sub_vect();
+    //test_p12_07_min_sub_vect_ordered();
+    test_p12_08_longest_sub_vec();
+    test_12_09_longest_cont_num_seq();
 
     return 0;
 }
