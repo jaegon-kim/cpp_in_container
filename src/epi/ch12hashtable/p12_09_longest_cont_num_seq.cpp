@@ -54,7 +54,7 @@ namespace p12_09 {
     }
 }
 
-void test_12_09_longest_cont_num_seq() {
+void test_p12_09_longest_cont_num_seq() {
     PRINT_FUNC_NAME;
     p12_09::test(vector<int> {3, -2, 7, 9, 8, 1, 2, 0, -1, 5, 8});
     p12_09::test(vector<int> {10, 5, 3, 11, 6, 100, 4, 100000000});
