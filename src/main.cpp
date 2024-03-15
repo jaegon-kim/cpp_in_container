@@ -115,6 +115,8 @@ extern void test_p12_08_longest_sub_vec();
 extern void test_p12_09_longest_cont_num_seq();
 extern void test_p12_10_find_appended_words();
 extern void test_p12_11_collatz_conjecture();
+extern void test_p13_00_sort_bootcamp();
+extern void test_p13_01_intersection_of_sorted_vec();
 
 int main() {
 
@@ -230,9 +232,11 @@ int main() {
     //test_p12_06_min_sub_vect();
     //test_p12_07_min_sub_vect_ordered();
     //test_p12_08_longest_sub_vec();
-    test_p12_09_longest_cont_num_seq();
-    test_p12_10_find_appended_words();
-    test_p12_11_collatz_conjecture();
+    //test_p12_09_longest_cont_num_seq();
+    //test_p12_10_find_appended_words();
+    //test_p12_11_collatz_conjecture();
+    test_p13_00_sort_bootcamp();
+    test_p13_01_intersection_of_sorted_vec();
 
     return 0;
 }
