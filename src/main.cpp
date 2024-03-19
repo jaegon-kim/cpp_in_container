@@ -120,6 +120,7 @@ extern void test_p13_01_intersection_of_sorted_vec();
 extern void test_p13_02_merge_sorted();
 extern void test_p13_03_h_index();
 extern void test_p13_04_rm_dup_name();
+extern void test_p13_05_impossible_min_num();
 
 int main() {
 
@@ -240,9 +241,10 @@ int main() {
     //test_p12_11_collatz_conjecture();
     //test_p13_00_sort_bootcamp();
     //test_p13_01_intersection_of_sorted_vec();
-    test_p13_02_merge_sorted();
-    test_p13_03_h_index();
-    test_p13_04_rm_dup_name();
+    //test_p13_02_merge_sorted();
+    //test_p13_03_h_index();
+    //test_p13_04_rm_dup_name();
+    test_p13_05_impossible_min_num();
 
     return 0;
 }
