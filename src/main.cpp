@@ -121,6 +121,7 @@ extern void test_p13_02_merge_sorted();
 extern void test_p13_03_h_index();
 extern void test_p13_04_rm_dup_name();
 extern void test_p13_05_impossible_min_num();
+extern void test_p13_06_calendar_max_dup_sch();
 
 int main() {
 
@@ -244,7 +245,8 @@ int main() {
     //test_p13_02_merge_sorted();
     //test_p13_03_h_index();
     //test_p13_04_rm_dup_name();
-    test_p13_05_impossible_min_num();
+    //test_p13_05_impossible_min_num();
+    test_p13_06_calendar_max_dup_sch();
 
     return 0;
 }
