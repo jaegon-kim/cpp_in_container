@@ -122,6 +122,8 @@ extern void test_p13_03_h_index();
 extern void test_p13_04_rm_dup_name();
 extern void test_p13_05_impossible_min_num();
 extern void test_p13_06_calendar_max_dup_sch();
+extern void test_p13_07_merge_schedule();
+extern void test_p13_08_sort_with_many_dup();
 
 int main() {
 
@@ -246,7 +248,9 @@ int main() {
     //test_p13_03_h_index();
     //test_p13_04_rm_dup_name();
     //test_p13_05_impossible_min_num();
-    test_p13_06_calendar_max_dup_sch();
+    //test_p13_06_calendar_max_dup_sch();
+    test_p13_07_merge_schedule();
+    test_p13_08_sort_with_many_dup();
 
     return 0;
 }
