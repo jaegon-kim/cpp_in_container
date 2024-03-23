@@ -62,6 +62,22 @@ void dump_list(const std::list<T> & l, bool nl) {
     }
 }
 
+
+
+template <typename F, typename S>
+void dump_list_of_pair(const std::list<std::pair<F, S>> & l, bool nl) {
+    std::cout << "{";
+    for (auto & p: l) {
+        std::cout << "(" << p.first << ", " << p.second << "), ";
+
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
+
 template <typename T>
 void dump_deq(const std::deque<T> & q, bool nl) {
     std::cout << "{";

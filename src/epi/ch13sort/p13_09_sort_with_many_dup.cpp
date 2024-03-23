@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace p13_08 {
+namespace p13_09 {
 
     bool compare(const pair<int, vector<string>> & a, const pair<int, vector<string>> & b) {
         return a.first < b.first;
@@ -47,9 +47,9 @@ namespace p13_08 {
     }
 }
 
-void test_p13_08_sort_with_many_dup() {
+void test_p13_09_sort_with_many_dup() {
     PRINT_FUNC_NAME;
-    p13_08::test(vector<pair<string, int>> {
+    p13_09::test(vector<pair<string, int>> {
         {"Greg", 14},
         {"John", 12},
         {"Andy", 11},

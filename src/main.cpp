@@ -123,7 +123,10 @@ extern void test_p13_04_rm_dup_name();
 extern void test_p13_05_impossible_min_num();
 extern void test_p13_06_calendar_max_dup_sch();
 extern void test_p13_07_merge_schedule();
-extern void test_p13_08_sort_with_many_dup();
+extern void test_p13_09_sort_with_many_dup();
+extern void test_p13_10_team_picture();
+extern void test_p13_11_list_safe_sort();
+extern void test_p13_12_salary_cap();
 
 int main() {
 
@@ -249,8 +252,11 @@ int main() {
     //test_p13_04_rm_dup_name();
     //test_p13_05_impossible_min_num();
     //test_p13_06_calendar_max_dup_sch();
-    test_p13_07_merge_schedule();
-    test_p13_08_sort_with_many_dup();
+    //test_p13_07_merge_schedule();
+    test_p13_09_sort_with_many_dup();
+    test_p13_10_team_picture();
+    test_p13_11_list_safe_sort();
+    test_p13_12_salary_cap();
 
     return 0;
 }
