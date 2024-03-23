@@ -127,6 +127,7 @@ extern void test_p13_09_sort_with_many_dup();
 extern void test_p13_10_team_picture();
 extern void test_p13_11_list_safe_sort();
 extern void test_p13_12_salary_cap();
+extern void test_p13_08_merge_range();
 
 int main() {
 
@@ -253,10 +254,11 @@ int main() {
     //test_p13_05_impossible_min_num();
     //test_p13_06_calendar_max_dup_sch();
     //test_p13_07_merge_schedule();
-    test_p13_09_sort_with_many_dup();
-    test_p13_10_team_picture();
-    test_p13_11_list_safe_sort();
-    test_p13_12_salary_cap();
+    //test_p13_09_sort_with_many_dup();
+    //test_p13_10_team_picture();
+    //test_p13_11_list_safe_sort();
+    //test_p13_12_salary_cap();
+    test_p13_08_merge_range();
 
     return 0;
 }
