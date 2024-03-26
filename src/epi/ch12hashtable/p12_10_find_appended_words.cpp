@@ -12,7 +12,7 @@ namespace p12_10 {
     
     optional<pair<int, int>> exhaustive_search(const vector<string> & words, vector<bool> & visit, unordered_map<string, pair<int, int>> & map, vector<string> & key_vec, int depth) {
 
-        if (depth == words.size()) {
+        if (depth == (int) words.size()) {
             //dump_vec(key_vec, true);
             string key = "";
             for (size_t i = 0; i < key_vec.size(); i++) {

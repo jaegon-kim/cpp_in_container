@@ -128,6 +128,13 @@ extern void test_p13_10_team_picture();
 extern void test_p13_11_list_safe_sort();
 extern void test_p13_12_salary_cap();
 extern void test_p13_08_merge_range();
+<<<<<<< HEAD
+=======
+extern void test_p14_00_bootcamp();
+extern void test_p14_01_check_bst();
+extern void test_p14_02_next_value();
+extern void test_p14_03_k_max_values();
+>>>>>>> 7a740af (binary search tree p14-0, 1, 2, 3)
 
 int main() {
 
@@ -254,11 +261,15 @@ int main() {
     //test_p13_05_impossible_min_num();
     //test_p13_06_calendar_max_dup_sch();
     //test_p13_07_merge_schedule();
+    test_p13_08_merge_range();
     //test_p13_09_sort_with_many_dup();
     //test_p13_10_team_picture();
     //test_p13_11_list_safe_sort();
     //test_p13_12_salary_cap();
-    test_p13_08_merge_range();
+    test_p14_00_bootcamp();
+    test_p14_01_check_bst();
+    test_p14_02_next_value();
+    test_p14_03_k_max_values();
 
     return 0;
 }

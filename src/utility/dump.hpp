@@ -5,6 +5,8 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <map>
+#include <set>
 #include <deque>
 #include <list>
 
@@ -104,8 +106,35 @@ void dump_map(const std::unordered_map<K, V> & m, bool nl) {
     }
 }
 
+template <typename K, typename V>
+void dump_map(const std::map<K, V> & m, bool nl) {
+    std::cout << "{";
+    for (const auto & p: m) {
+        std::cout << "(" << p.first << " ," << p.second << "), ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
+
 template <typename T>
 void dump_set(const std::unordered_set<T> & s, bool nl) {
+    std::cout << "{";
+    for (const T & e: s) {
+        std::cout << "(" << e << "), ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+
+}
+
+
+template <typename T>
+void dump_set(const std::set<T> & s, bool nl) {
     std::cout << "{";
     for (const T & e: s) {
         std::cout << "(" << e << "), ";
