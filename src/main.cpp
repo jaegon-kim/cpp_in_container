@@ -132,6 +132,7 @@ extern void test_p14_00_bootcamp();
 extern void test_p14_01_check_bst();
 extern void test_p14_02_next_value();
 extern void test_p14_03_k_max_values();
+extern void test_p14_04_lca();
 
 int main() {
 
@@ -263,10 +264,11 @@ int main() {
     //test_p13_10_team_picture();
     //test_p13_11_list_safe_sort();
     //test_p13_12_salary_cap();
-    test_p14_00_bootcamp();
-    test_p14_01_check_bst();
-    test_p14_02_next_value();
-    test_p14_03_k_max_values();
+    //test_p14_00_bootcamp();
+    //test_p14_01_check_bst();
+    //test_p14_02_next_value();
+    //test_p14_03_k_max_values();
+    test_p14_04_lca();
 
     return 0;
 }
