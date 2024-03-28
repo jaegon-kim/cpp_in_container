@@ -133,6 +133,7 @@ extern void test_p14_01_check_bst();
 extern void test_p14_02_next_value();
 extern void test_p14_03_k_max_values();
 extern void test_p14_04_lca();
+extern void test_p14_05_const_tree_inorder_log();
 
 int main() {
 
@@ -268,7 +269,8 @@ int main() {
     //test_p14_01_check_bst();
     //test_p14_02_next_value();
     //test_p14_03_k_max_values();
-    test_p14_04_lca();
+    //test_p14_04_lca();
+    test_p14_05_const_tree_inorder_log();
 
     return 0;
 }
