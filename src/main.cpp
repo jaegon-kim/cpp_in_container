@@ -135,6 +135,7 @@ extern void test_p14_03_k_max_values();
 extern void test_p14_04_lca();
 extern void test_p14_05_const_tree_inorder_log();
 extern void test_p14_06_shortest_path();
+extern void test_p14_07_a_b_sqrt();
 
 int main() {
 
@@ -272,8 +273,8 @@ int main() {
     //test_p14_03_k_max_values();
     //test_p14_04_lca();test_p14_06_shortest_path
     //test_p14_05_const_tree_inorder_log();
-    test_p14_06_shortest_path();
-    
+    //test_p14_06_shortest_path();
+    test_p14_07_a_b_sqrt();
 
     return 0;
 }
