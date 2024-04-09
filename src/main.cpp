@@ -137,6 +137,7 @@ extern void test_p14_05_const_tree_inorder_log();
 extern void test_p14_06_shortest_path();
 extern void test_p14_07_a_b_sqrt();
 extern void test_p14_08_lowest_height();
+extern void test_p14_10_get_range();
 
 int main() {
 
@@ -276,7 +277,8 @@ int main() {
     //test_p14_05_const_tree_inorder_log();
     //test_p14_06_shortest_path();
     //test_p14_07_a_b_sqrt();
-    test_p14_08_lowest_height();
+    //test_p14_08_lowest_height();
+    test_p14_10_get_range();
     
     return 0;
 }
