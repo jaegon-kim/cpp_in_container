@@ -140,6 +140,8 @@ extern void test_p14_08_lowest_height();
 extern void test_p14_10_get_range();
 extern void test_p14_09_check_complete_sort();
 extern void test_p14_011_customer_credit();
+extern void test_p15_00_bootcamp();
+extern void test_p15_01_hanoi_tower();
 
 int main() {
 
@@ -282,7 +284,9 @@ int main() {
     //test_p14_08_lowest_height();
     //test_p14_09_check_complete_sort();
     //test_p14_10_get_range();
-    test_p14_011_customer_credit();
+    //test_p14_011_customer_credit();
+    test_p15_00_bootcamp();
+    test_p15_01_hanoi_tower();
         
     return 0;
 }
