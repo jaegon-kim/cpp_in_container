@@ -142,6 +142,8 @@ extern void test_p14_09_check_complete_sort();
 extern void test_p14_011_customer_credit();
 extern void test_p15_00_bootcamp();
 extern void test_p15_01_hanoi_tower();
+extern void test_p15_02_mnemonics();
+extern void test_p15_03_safe_qeen();
 
 int main() {
 
@@ -285,8 +287,10 @@ int main() {
     //test_p14_09_check_complete_sort();
     //test_p14_10_get_range();
     //test_p14_011_customer_credit();
-    test_p15_00_bootcamp();
-    test_p15_01_hanoi_tower();
+    //test_p15_00_bootcamp();
+    //test_p15_01_hanoi_tower();
+    test_p15_02_mnemonics();
+    test_p15_03_safe_qeen();
         
     return 0;
 }
