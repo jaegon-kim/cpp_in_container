@@ -144,6 +144,7 @@ extern void test_p15_00_bootcamp();
 extern void test_p15_01_hanoi_tower();
 extern void test_p15_02_mnemonics();
 extern void test_p15_03_safe_qeen();
+extern void test_p15_03_1_safe_qeen_enhance();
 
 int main() {
 
@@ -290,7 +291,8 @@ int main() {
     //test_p15_00_bootcamp();
     //test_p15_01_hanoi_tower();
     //test_p15_02_mnemonics();
-    test_p15_03_safe_qeen();
+    //test_p15_03_safe_qeen();
+    test_p15_03_1_safe_qeen_enhance();
         
     return 0;
 }
