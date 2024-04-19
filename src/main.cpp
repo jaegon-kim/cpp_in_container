@@ -289,7 +289,7 @@ int main() {
     //test_p14_011_customer_credit();
     //test_p15_00_bootcamp();
     //test_p15_01_hanoi_tower();
-    test_p15_02_mnemonics();
+    //test_p15_02_mnemonics();
     test_p15_03_safe_qeen();
         
     return 0;

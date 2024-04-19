@@ -147,5 +147,19 @@ void dump_set(const std::set<T> & s, bool nl) {
 }
 
 
+template <typename T>
+void dump_set_of_pair(const std::set<T> & s, bool nl) {
+    std::cout << "{";
+    for (const T & e: s) {
+        std::cout << "(" << e.first << ", " << e.second << "), ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+
+}
+
+
 
 #endif // __UTILITY_DUMP_HPP__
