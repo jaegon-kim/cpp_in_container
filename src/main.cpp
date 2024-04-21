@@ -145,6 +145,7 @@ extern void test_p15_01_hanoi_tower();
 extern void test_p15_02_mnemonics();
 extern void test_p15_03_safe_qeen();
 extern void test_p15_03_1_safe_qeen_enhance();
+extern void test_p15_04_permutation();
 
 int main() {
 
@@ -292,7 +293,8 @@ int main() {
     //test_p15_01_hanoi_tower();
     //test_p15_02_mnemonics();
     //test_p15_03_safe_qeen();
-    test_p15_03_1_safe_qeen_enhance();
+    //test_p15_03_1_safe_qeen_enhance();
+    test_p15_04_permutation();
         
     return 0;
 }
