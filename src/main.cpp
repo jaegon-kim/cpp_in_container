@@ -146,6 +146,7 @@ extern void test_p15_02_mnemonics();
 extern void test_p15_03_safe_qeen();
 extern void test_p15_03_1_safe_qeen_enhance();
 extern void test_p15_04_permutation();
+extern void test_p15_05_power_set();
 
 int main() {
 
@@ -294,7 +295,8 @@ int main() {
     //test_p15_02_mnemonics();
     //test_p15_03_safe_qeen();
     //test_p15_03_1_safe_qeen_enhance();
-    test_p15_04_permutation();
+    //test_p15_04_permutation();
+    test_p15_05_power_set();
         
     return 0;
 }
