@@ -7,15 +7,17 @@ using namespace std;
 
 namespace p15_05 {
 
-    void power_set(const vector<int> & v, vector<vector<int>> & ps_v) {
-        ps_v.push_back(vector<int>());
-        for (auto i = v.begin(); i != v.end(); i++) {
-            auto j = i + 1;
-            for (; j != v.end(); j++) {
-                ps_v.push_back(vector<int> (i, j));
-            }
-            vector<int> e(i, j);
-            ps_v.push_back(vector<int> (i, j));
+    void power_set(const vector<int> & v, size_t c, vector<int> & p, vector<vector<int>> & ps_v) {
+        size_t v_len = v.size();
+        if (c == v_len) {
+            return;
+        }
+
+        for (size_t i = c; i < v_len; i++) {
+            p.push_back(v[i]);
+            ps_v.push_back(p);
+            power_set(v, i + 1, p, ps_v);
+            p.pop_back();
         }
     }
 
@@ -25,8 +27,10 @@ namespace p15_05 {
 
     void test(const vector<int> & input_v) {
         vector<int> v = input_v;
+        vector<int> p;
         vector<vector<int>> ps_v;
-        power_set(v, ps_v);
+        ps_v.push_back(p);
+        power_set(v, 0, p, ps_v);
         sort(ps_v.begin(), ps_v.end(), compare);
 
         cout << "power set of ";
@@ -43,4 +47,6 @@ void test_p15_05_power_set() {
     p15_05::test(vector<int> {0});
     p15_05::test(vector<int> {0, 1});
     p15_05::test(vector<int> {0, 1, 2});
+    p15_05::test(vector<int> {0, 1, 2, 3});
+
 }

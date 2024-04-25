@@ -147,6 +147,7 @@ extern void test_p15_03_safe_qeen();
 extern void test_p15_03_1_safe_qeen_enhance();
 extern void test_p15_04_permutation();
 extern void test_p15_05_power_set();
+extern void test_p15_06_subset_len_k();
 
 int main() {
 
@@ -297,6 +298,7 @@ int main() {
     //test_p15_03_1_safe_qeen_enhance();
     //test_p15_04_permutation();
     test_p15_05_power_set();
+    test_p15_06_subset_len_k();
         
     return 0;
 }
