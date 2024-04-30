@@ -149,6 +149,7 @@ extern void test_p15_04_permutation();
 extern void test_p15_05_power_set();
 extern void test_p15_06_subset_len_k();
 extern void test_p15_07_bracket_pair_set();
+extern void test_p15_08_palindrom();
 
 int main() {
 
@@ -300,7 +301,8 @@ int main() {
     //test_p15_04_permutation();
     //test_p15_05_power_set();
     //test_p15_06_subset_len_k();
-    test_p15_07_bracket_pair_set();
+    //test_p15_07_bracket_pair_set();
+    test_p15_08_palindrom();
         
     return 0;
 }
