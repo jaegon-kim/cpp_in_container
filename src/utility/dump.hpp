@@ -161,5 +161,19 @@ void dump_set_of_pair(const std::set<T> & s, bool nl) {
 }
 
 
+template <typename T>
+void dump_vec_of_unoreded_set(const std::vector<std::unordered_set<T>> & v_s) {
+    for (auto s: v_s) {
+        dump_set(s, true);
+    }
+}
+
+template <typename T>
+void dump_vec_of_vec(const std::vector<std::vector<T>> & v_v) {
+    for (auto v: v_v) {
+        dump_vec(v, true);
+    }
+}
+
 
 #endif // __UTILITY_DUMP_HPP__
