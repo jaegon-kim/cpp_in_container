@@ -152,6 +152,7 @@ extern void test_p15_07_bracket_pair_set();
 extern void test_p15_08_palindrom();
 extern void test_p15_09_gen_binarytree();
 extern void test_p15_10_sudoku();
+extern void test_p15_11_gray_code();
 
 int main() {
 
@@ -306,7 +307,8 @@ int main() {
     //test_p15_07_bracket_pair_set();
     //test_p15_08_palindrom();
     //test_p15_09_gen_binarytree();
-    test_p15_10_sudoku();
+    //test_p15_10_sudoku();
+    test_p15_11_gray_code();
 
     return 0;
 }
