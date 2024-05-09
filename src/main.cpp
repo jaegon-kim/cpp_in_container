@@ -155,6 +155,7 @@ extern void test_p15_10_sudoku();
 extern void test_p15_11_gray_code();
 extern void test_p16_00_finbonacci();
 extern void test_p16_00_max_sum_subarray();
+extern void test_p16_01_possible_point_case();
 
 int main() {
 
@@ -311,8 +312,9 @@ int main() {
     //test_p15_09_gen_binarytree();
     //test_p15_10_sudoku();
     //test_p15_11_gray_code();
-    test_p16_00_finbonacci();
-    test_p16_00_max_sum_subarray();
+    //test_p16_00_finbonacci();
+    //test_p16_00_max_sum_subarray();
+    test_p16_01_possible_point_case();
 
     return 0;
 }
