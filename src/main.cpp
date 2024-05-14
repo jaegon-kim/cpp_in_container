@@ -157,6 +157,7 @@ extern void test_p16_00_finbonacci();
 extern void test_p16_00_max_sum_subarray();
 extern void test_p16_01_possible_point_case();
 extern void test_p16_02_levenshtein_distance();
+extern void test_p16_03_array_path();
 
 int main() {
 
@@ -316,7 +317,8 @@ int main() {
     //test_p16_00_finbonacci();
     //test_p16_00_max_sum_subarray();
     //test_p16_01_possible_point_case();
-    test_p16_02_levenshtein_distance();
+    //test_p16_02_levenshtein_distance();
+    test_p16_03_array_path();
 
     return 0;
 }
