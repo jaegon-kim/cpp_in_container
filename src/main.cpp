@@ -3,6 +3,13 @@
 #include <main.hpp>
 #include <utility/util.hpp>
 
+// algorithm
+extern void test_a01_02_subset_k_len();
+extern void test_a01_01_subset_all();
+extern void test_a01_03_cont_subarray();
+extern void test_a01_04_permutation();
+
+// epi
 extern void test_p4_1_parity();
 extern void test_p4_2_bit_swap();
 extern void test_p4_3_bit_reverse();
@@ -158,12 +165,19 @@ extern void test_p16_00_max_sum_subarray();
 extern void test_p16_01_possible_point_case();
 extern void test_p16_02_levenshtein_distance();
 extern void test_p16_03_array_path();
+extern void test_p16_04_binomial_coefficient();
 
 int main() {
 
     std::cout << bracketStr(helloWorld) << std::endl;
 
-    //Chapter 4
+    // Algorithm summary
+    //test_a01_01_subset_all();
+    //test_a01_02_subset_k_len();
+    //test_a01_03_cont_subarray();
+    //test_a01_04_permutation();
+ 
+    // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
     //test_p4_2_bit_swap();
     //test_p4_3_bit_reverse();
@@ -318,7 +332,8 @@ int main() {
     //test_p16_00_max_sum_subarray();
     //test_p16_01_possible_point_case();
     //test_p16_02_levenshtein_distance();
-    test_p16_03_array_path();
+    //test_p16_03_array_path();
+    test_p16_04_binomial_coefficient();
 
     return 0;
 }
