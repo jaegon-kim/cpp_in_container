@@ -166,6 +166,7 @@ extern void test_p16_01_possible_point_case();
 extern void test_p16_02_levenshtein_distance();
 extern void test_p16_03_array_path();
 extern void test_p16_04_binomial_coefficient();
+extern void test_p16_05_pattern_in_2by2_array();
 
 int main() {
 
@@ -333,7 +334,8 @@ int main() {
     //test_p16_01_possible_point_case();
     //test_p16_02_levenshtein_distance();
     //test_p16_03_array_path();
-    test_p16_04_binomial_coefficient();
+    //test_p16_04_binomial_coefficient();
+    test_p16_05_pattern_in_2by2_array();
 
     return 0;
 }
