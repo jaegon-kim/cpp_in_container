@@ -174,7 +174,7 @@ int main() {
     std::cout << bracketStr(helloWorld) << std::endl;
 
     // Algorithm summary
-    //test_a01_01_subset_all();
+    test_a01_01_subset_all();
     //test_a01_02_subset_k_len();
     //test_a01_03_cont_subarray();
     //test_a01_04_permutation();

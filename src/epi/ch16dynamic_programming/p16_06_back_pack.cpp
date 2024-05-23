@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 #include "utility/dump.hpp"
 using namespace std;
 
@@ -30,7 +31,7 @@ namespace p16_06 {
 
         int ws = 0, cs = 0;
 
-        for (int i = c_i; i < w_v.size(); i++) {
+        for (int i = c_i; i < (int) w_v.size(); i++) {
 
             ws = c_ws + w_v[i].w;  
             if (ws > 130) {
@@ -54,6 +55,38 @@ namespace p16_06 {
         return;
     }
 
+
+    vector<int> pack_2(vector<Watch> & w_v, int idx, int a_w, int & r_c) {
+
+        if (idx == (int) (w_v.size() - 1)) {
+            vector<int> v;
+            if (w_v[idx].w <= a_w) {
+                r_c = w_v[idx].c;
+                v.push_back(idx);
+                return v;
+            } else {
+                return v;
+            }
+        }
+
+        int c1 = 0, c2 = 0;
+        vector<int> v1, v2;
+        if (a_w >= w_v[idx].w) {
+            v1 = pack_2(w_v, idx + 1, a_w - w_v[idx].w, c1);
+            v1.push_back(idx);
+            c1 += w_v[idx].c;
+        }
+
+        v2 = pack_2(w_v, idx + 1, a_w, c2);
+
+        if (c1 > c2) {
+            r_c = c1;
+            return v1;
+        } else {
+            r_c = c2;
+            return v2;
+        }
+    }
 
     void test() {
         vector<Watch> w_v{
@@ -83,8 +116,16 @@ namespace p16_06 {
         vector<Watch> p_v;
 
         pack(w_v, 0, 0, 0, max_cost, max_cost_p_v, p_v);
-        cout << "Max cost packing: ";
+        cout << "Max cost packing (with pack ): ";
         dump_watch_vec(max_cost_p_v, true);
+
+        int r_c = 0;
+        vector<int> r_v = pack_2(w_v, 0, 130, r_c);
+        cout << "Max cost packing (with pack2): ";
+         for (auto e: r_v) {           
+            cout << "(" << w_v[e].n << "-" << w_v[e].c << "-" << w_v[e].w << "), ";
+        }
+        cout << endl;
 
     }
 }
