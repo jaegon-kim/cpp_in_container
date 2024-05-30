@@ -170,6 +170,7 @@ extern void test_p16_05_pattern_in_2by2_array();
 extern void test_p16_06_back_pack();
 extern void test_p16_07_bedbathandbeyond();
 extern void test_p16_08_number_triangle();
+extern void test_p16_09_coin_game();
 
 int main() {
 
@@ -340,8 +341,9 @@ int main() {
     //test_p16_04_binomial_coefficient();
     //test_p16_05_pattern_in_2by2_array();
     //test_p16_06_back_pack();
-    test_p16_07_bedbathandbeyond();
-    test_p16_08_number_triangle();
+    //test_p16_07_bedbathandbeyond();
+    //test_p16_08_number_triangle();
+    test_p16_09_coin_game();
 
     return 0;
 }
