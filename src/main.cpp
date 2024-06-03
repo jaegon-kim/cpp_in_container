@@ -172,6 +172,7 @@ extern void test_p16_07_bedbathandbeyond();
 extern void test_p16_08_number_triangle();
 extern void test_p16_09_coin_game();
 extern void test_p16_10_n_stair_k_steps();
+extern void test_p16_11_pretty_text_lines();
 
 int main() {
 
@@ -345,7 +346,8 @@ int main() {
     //test_p16_07_bedbathandbeyond();
     //test_p16_08_number_triangle();
     //test_p16_09_coin_game();
-    test_p16_10_n_stair_k_steps();
+    //test_p16_10_n_stair_k_steps();
+    test_p16_11_pretty_text_lines();
 
     return 0;
 }
