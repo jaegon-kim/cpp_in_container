@@ -174,6 +174,7 @@ extern void test_p16_09_coin_game();
 extern void test_p16_10_n_stair_k_steps();
 extern void test_p16_11_pretty_text_lines();
 extern void test_p16_12_inc_permutation();
+extern void test_p17_01_assign_2_job();
 
 int main() {
 
@@ -349,7 +350,8 @@ int main() {
     //test_p16_09_coin_game();
     //test_p16_10_n_stair_k_steps();
     //test_p16_11_pretty_text_lines();
-    test_p16_12_inc_permutation();
+    //test_p16_12_inc_permutation();
+    test_p17_01_assign_2_job();
     
 
     return 0;
