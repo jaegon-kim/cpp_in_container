@@ -177,6 +177,7 @@ extern void test_p16_12_inc_permutation();
 extern void test_p17_01_assign_2_job();
 extern void test_p17_02_min_latency();
 extern void test_p17_03_min_cover_all();
+extern void test_p17_00_bootcamp();
 
 int main() {
 
@@ -355,7 +356,8 @@ int main() {
     //test_p16_12_inc_permutation();
     //test_p17_01_assign_2_job();
     //test_p17_02_min_latency();
-    test_p17_03_min_cover_all();    
+    //test_p17_03_min_cover_all();
+    test_p17_00_bootcamp();
 
     return 0;
 }
