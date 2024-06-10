@@ -178,6 +178,7 @@ extern void test_p17_01_assign_2_job();
 extern void test_p17_02_min_latency();
 extern void test_p17_03_min_cover_all();
 extern void test_p17_00_bootcamp();
+extern void test_p17_04_has_3_sum();
 
 int main() {
 
@@ -357,7 +358,8 @@ int main() {
     //test_p17_01_assign_2_job();
     //test_p17_02_min_latency();
     //test_p17_03_min_cover_all();
-    test_p17_00_bootcamp();
+    //test_p17_00_bootcamp();
+    test_p17_04_has_3_sum();
 
     return 0;
 }
