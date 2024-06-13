@@ -180,6 +180,7 @@ extern void test_p17_03_min_cover_all();
 extern void test_p17_00_bootcamp();
 extern void test_p17_04_has_3_sum();
 extern void test_p17_05_finding_major_ele();
+extern void test_p17_06_reach_city();
 
 int main() {
 
@@ -361,7 +362,8 @@ int main() {
     //test_p17_03_min_cover_all();
     //test_p17_00_bootcamp();
     //test_p17_04_has_3_sum();
-    test_p17_05_finding_major_ele();
+    //test_p17_05_finding_major_ele();
+    test_p17_06_reach_city();
 
     return 0;
 }
