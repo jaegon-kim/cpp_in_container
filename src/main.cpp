@@ -181,6 +181,7 @@ extern void test_p17_00_bootcamp();
 extern void test_p17_04_has_3_sum();
 extern void test_p17_05_finding_major_ele();
 extern void test_p17_06_reach_city();
+extern void test_p17_07_max_waterpool();
 
 int main() {
 
@@ -363,7 +364,8 @@ int main() {
     //test_p17_00_bootcamp();
     //test_p17_04_has_3_sum();
     //test_p17_05_finding_major_ele();
-    test_p17_06_reach_city();
+    //test_p17_06_reach_city();
+    test_p17_07_max_waterpool();
 
     return 0;
 }
