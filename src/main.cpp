@@ -183,6 +183,7 @@ extern void test_p17_05_finding_major_ele();
 extern void test_p17_06_reach_city();
 extern void test_p17_07_max_waterpool();
 extern void test_p17_08_max_square_in_skyline();
+extern void test_p24_01_gcd();
 
 int main() {
 
@@ -367,7 +368,8 @@ int main() {
     //test_p17_05_finding_major_ele();
     //test_p17_06_reach_city();
     //test_p17_07_max_waterpool();
-    test_p17_08_max_square_in_skyline();
+    //test_p17_08_max_square_in_skyline();
+    test_p24_01_gcd();
 
     return 0;
 }
