@@ -184,6 +184,7 @@ extern void test_p17_06_reach_city();
 extern void test_p17_07_max_waterpool();
 extern void test_p17_08_max_square_in_skyline();
 extern void test_p24_01_gcd();
+extern void test_p24_02_min_int_not_exising_in_a();
 
 int main() {
 
@@ -369,7 +370,8 @@ int main() {
     //test_p17_06_reach_city();
     //test_p17_07_max_waterpool();
     //test_p17_08_max_square_in_skyline();
-    test_p24_01_gcd();
+    //test_p24_01_gcd();
+    test_p24_02_min_int_not_exising_in_a();
 
     return 0;
 }
