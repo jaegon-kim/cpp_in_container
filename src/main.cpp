@@ -185,6 +185,7 @@ extern void test_p17_07_max_waterpool();
 extern void test_p17_08_max_square_in_skyline();
 extern void test_p24_01_gcd();
 extern void test_p24_02_min_int_not_exising_in_a();
+extern void test_p24_03_stock_trading_k();
 
 int main() {
 
@@ -371,7 +372,8 @@ int main() {
     //test_p17_07_max_waterpool();
     //test_p17_08_max_square_in_skyline();
     //test_p24_01_gcd();
-    test_p24_02_min_int_not_exising_in_a();
+    //test_p24_02_min_int_not_exising_in_a();
+    test_p24_03_stock_trading_k();
 
     return 0;
 }

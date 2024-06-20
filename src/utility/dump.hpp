@@ -37,6 +37,19 @@ void dump_vec(const std::vector<T> & v, size_t start_idx, size_t end_idx, bool n
     }
 }
 
+template <typename T>
+void dump_vec_with_idx(const std::vector<T> & v, bool nl) {
+    std::cout << "{";
+    size_t len = v.size();
+    for (size_t i = 0; i < len; i++) {
+        std::cout << "[" << i << "]" << v[i] << ", ";
+    }
+    std::cout << "}";
+    if (nl) {
+        std::cout << std::endl;
+    }
+}
+
 
 template <typename F, typename S>
 void dump_vec_of_pair(const std::vector<std::pair<F, S>> & v, bool nl) {
