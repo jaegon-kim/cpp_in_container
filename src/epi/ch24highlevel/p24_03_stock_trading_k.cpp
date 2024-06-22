@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <limits>
 #include "utility/dump.hpp"
 using namespace std;
 namespace p24_03 {
@@ -127,11 +128,64 @@ namespace p24_03 {
         dump_cache(distilled_prices, cache, 0, k);
     }
 
+    int unlimited_trade(const vector<int> & prices) {
+        int profit = 0;
+        for (size_t i = 1; i < prices.size(); i++) {
+            int t_p = prices[i] - prices[i - 1];
+            if (t_p > 0) {
+                profit += t_p;
+            }
+        }
+        return profit;
+    }
+
+    int max(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+    
+    int min(int a, int b) {
+        if (a < b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    int trade2(const vector<int> & prices, unsigned int k) {
+        if (!k) {
+            return 0;
+        } else if (k >= prices.size()) {
+            return unlimited_trade(prices);
+        }
+
+        vector<int> min_prices(k, numeric_limits<int>::infinity());
+        vector<int> max_profits(k, 0.0);
+        for (int price: prices) {
+            for (int i = k - 1; i >= 0; i--) {
+                max_profits[i] = max(max_profits[i], price - min_prices[i]);
+                min_prices[i] = min(min_prices[i], price - (i? max_profits[i - 1] : 0));
+
+            }
+        }
+        return max_profits.back();
+    }
+
+    // 결과가 이상하게 나오는 듯하
+    void test_o_n(const vector<int> & prices, unsigned int k) {
+        int r = trade2(prices, k);
+        cout << "trade-2: " <<  r << endl;
+    }
+
 
     void test(const vector<int> & prices, unsigned int k) {
         cout << endl;
         test_all_range(prices, k);
         test_distilled(prices, k);
+        test_o_n(prices, k);
     }
 
 }
