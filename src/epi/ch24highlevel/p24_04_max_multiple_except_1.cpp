@@ -4,12 +4,13 @@
 #include "utility/dump.hpp"
 using namespace std;
 
-namespace p25_04 {
+namespace p24_04 {
 
     int max_multiple_except_1(const vector<int> & v) {
-        size_t min_positive_idx = numeric_limits<size_t>::infinity();
-        size_t max_negative_idx = numeric_limits<size_t>::infinity();
-        size_t zero_idx = numeric_limits<size_t>::infinity();
+        size_t min_positive_idx = numeric_limits<size_t>::max();
+        size_t max_negative_idx = numeric_limits<size_t>::max();
+        size_t min_negative_idx = numeric_limits<size_t>::max();
+        size_t zero_idx = numeric_limits<size_t>::max();
         size_t zero_cnt = 0;
         size_t negative_cnt = 0;
 
@@ -19,13 +20,20 @@ namespace p25_04 {
                 zero_cnt++;
             } else if (v[i] < 0) {
                 negative_cnt++;
-                if (max_negative_idx == numeric_limits<size_t>::infinity()) {
+                if (max_negative_idx == numeric_limits<size_t>::max()) {
                     max_negative_idx = i;
                 } else if (v[i] > v[max_negative_idx]) {
                     max_negative_idx = i;
                 }
+
+                if (min_negative_idx == numeric_limits<size_t>::max()) {
+                    min_negative_idx = i;
+                } else if (v[i] < v[min_negative_idx]) {
+                    min_negative_idx = i;
+                }
+
             } else {
-                if (min_positive_idx == numeric_limits<size_t>::infinity()) {
+                if (min_positive_idx == numeric_limits<size_t>::max()) {
                     min_positive_idx = i;
                 } else if (v[i] < v[min_positive_idx]) {
                     min_positive_idx = i;
@@ -45,7 +53,11 @@ namespace p25_04 {
         } else if (negative_cnt % 2) {
             exclude_idx = max_negative_idx;
         } else {
-            exclude_idx = min_positive_idx;
+            if (min_positive_idx == numeric_limits<size_t>::max()) {
+                exclude_idx = min_negative_idx;
+            } else {
+                exclude_idx = min_positive_idx;
+            }
         }
         cout << " exclude idx: " << exclude_idx << "(" << v[exclude_idx] << ") {";
 
@@ -70,15 +82,19 @@ namespace p25_04 {
     }
 }
 
-void test_p25_04_max_multiple_except_1() {
+void test_p24_04_max_multiple_except_1() {
     PRINT_FUNC_NAME;
-    p25_04::test(vector<int> {3, 2, 5, 4});
-    p25_04::test(vector<int> {3, 2, -1, 4});
-    p25_04::test(vector<int> {3, 2, -1, 4, -1, 6});
-    p25_04::test(vector<int> {3, 2, -1, 4, -2, 6});
-    p25_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3});
-    p25_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3, -4});
-    p25_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3, 0});
-    p25_04::test(vector<int> {3, 2, 0, -1, 4, -2, 6, -3, 0});
 
+    p24_04::test(vector<int> {3, 2, 5, 4});
+    p24_04::test(vector<int> {3, 2, -1, 4});
+    p24_04::test(vector<int> {3, 2, -1, 4, -1, 6});
+    p24_04::test(vector<int> {3, 2, -1, 4, -2, 6});
+    p24_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3});
+    p24_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3, -4});
+    p24_04::test(vector<int> {3, 2, -1, 4, -2, 6, -3, 0});
+    p24_04::test(vector<int> {3, 2, 0, -1, 4, -2, 6, -3, 0});
+    p24_04::test(vector<int> {-1, -2, -3});
+    p24_04::test(vector<int> {0, -1, -2, -3});
+    p24_04::test(vector<int> {-2, -3});
+    p24_04::test(vector<int> {0, -2, -3});
 }

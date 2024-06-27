@@ -186,7 +186,8 @@ extern void test_p17_08_max_square_in_skyline();
 extern void test_p24_01_gcd();
 extern void test_p24_02_min_int_not_exising_in_a();
 extern void test_p24_03_stock_trading_k();
-extern void test_p25_04_max_multiple_except_1();
+extern void test_p24_04_max_multiple_except_1();
+extern void test_p24_05_longest_inc_range();
 
 int main() {
 
@@ -375,7 +376,8 @@ int main() {
     //test_p24_01_gcd();
     //test_p24_02_min_int_not_exising_in_a();
     //test_p24_03_stock_trading_k();
-    test_p25_04_max_multiple_except_1(); 
+    test_p24_04_max_multiple_except_1();
+    test_p24_05_longest_inc_range();
 
     return 0;
 }
