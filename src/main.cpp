@@ -189,6 +189,7 @@ extern void test_p24_03_stock_trading_k();
 extern void test_p24_04_max_multiple_except_1();
 extern void test_p24_05_longest_inc_range();
 extern void test_p24_06_circulate_vec();
+extern void test_p24_07_update_rook_attack_pos();
 
 int main() {
 
@@ -379,7 +380,8 @@ int main() {
     //test_p24_03_stock_trading_k();
     //test_p24_04_max_multiple_except_1();
     //test_p24_05_longest_inc_range();
-    test_p24_06_circulate_vec();
+    //test_p24_06_circulate_vec();
+    test_p24_07_update_rook_attack_pos();
 
     return 0;
 }
