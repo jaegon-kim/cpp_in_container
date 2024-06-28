@@ -188,6 +188,7 @@ extern void test_p24_02_min_int_not_exising_in_a();
 extern void test_p24_03_stock_trading_k();
 extern void test_p24_04_max_multiple_except_1();
 extern void test_p24_05_longest_inc_range();
+extern void test_p24_06_circulate_vec();
 
 int main() {
 
@@ -376,8 +377,9 @@ int main() {
     //test_p24_01_gcd();
     //test_p24_02_min_int_not_exising_in_a();
     //test_p24_03_stock_trading_k();
-    test_p24_04_max_multiple_except_1();
-    test_p24_05_longest_inc_range();
+    //test_p24_04_max_multiple_except_1();
+    //test_p24_05_longest_inc_range();
+    test_p24_06_circulate_vec();
 
     return 0;
 }
