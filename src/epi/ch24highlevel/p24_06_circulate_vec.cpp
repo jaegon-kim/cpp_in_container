@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "utility/dump.hpp"
 using namespace std;
 namespace p24_06 {
@@ -33,14 +34,29 @@ namespace p24_06 {
         }
     }
 
+    void circulate_with_reverse(vector<int> & v, size_t tot_count) {
+        tot_count = tot_count % v.size();
+        reverse(v.begin(), v.end());
+        //dump_vec(v, true);
+        reverse(v.begin(), v.begin() + tot_count);
+        //dump_vec(v, true);
+        reverse(v.begin() + tot_count, v.end());
+        //dump_vec(v, true);
+    }
 
     void test(const vector<int> & i_v, size_t cache_size, size_t tot_count) {
         vector<int> v = i_v;
         vector<int> cache(cache_size);
         circulate_all(v, cache, tot_count);
-        
         cout << "(" << cache_size << ", " << tot_count << ")  ";
-        dump_vec(v, true);
+        dump_vec(v, false);
+        cout << " circulate with buffer" << endl;
+
+        vector<int> v2 = i_v;
+        circulate_with_reverse(v2, tot_count);
+        cout << "        ";
+        dump_vec(v2, false);
+        cout << " circulate with reverse" << endl;
      }
 }
 
