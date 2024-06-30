@@ -190,6 +190,7 @@ extern void test_p24_04_max_multiple_except_1();
 extern void test_p24_05_longest_inc_range();
 extern void test_p24_06_circulate_vec();
 extern void test_p24_07_update_rook_attack_pos();
+extern void test_p24_08_justify_text_lines();
 
 int main() {
 
@@ -381,7 +382,8 @@ int main() {
     //test_p24_04_max_multiple_except_1();
     //test_p24_05_longest_inc_range();
     //test_p24_06_circulate_vec();
-    test_p24_07_update_rook_attack_pos();
+    //test_p24_07_update_rook_attack_pos();
+    test_p24_08_justify_text_lines();
 
     return 0;
 }
