@@ -192,6 +192,7 @@ extern void test_p24_06_circulate_vec();
 extern void test_p24_07_update_rook_attack_pos();
 extern void test_p24_08_justify_text_lines();
 extern void test_p24_09_zipping();
+extern void test_p24_10_jump_list_copy();
 
 int main() {
 
@@ -385,7 +386,8 @@ int main() {
     //test_p24_06_circulate_vec();
     //test_p24_07_update_rook_attack_pos();
     //test_p24_08_justify_text_lines();
-    test_p24_09_zipping();
+    //test_p24_09_zipping();
+    test_p24_10_jump_list_copy();
 
     return 0;
 }
