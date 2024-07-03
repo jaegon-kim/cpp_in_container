@@ -193,6 +193,7 @@ extern void test_p24_07_update_rook_attack_pos();
 extern void test_p24_08_justify_text_lines();
 extern void test_p24_09_zipping();
 extern void test_p24_10_jump_list_copy();
+extern void test_p24_11_longest_valid_range();
 
 int main() {
 
@@ -387,7 +388,8 @@ int main() {
     //test_p24_07_update_rook_attack_pos();
     //test_p24_08_justify_text_lines();
     //test_p24_09_zipping();
-    test_p24_10_jump_list_copy();
+    //test_p24_10_jump_list_copy();
+    test_p24_11_longest_valid_range();
 
     return 0;
 }
