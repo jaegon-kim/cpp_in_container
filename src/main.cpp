@@ -194,6 +194,7 @@ extern void test_p24_08_justify_text_lines();
 extern void test_p24_09_zipping();
 extern void test_p24_10_jump_list_copy();
 extern void test_p24_11_longest_valid_range();
+extern void test_p24_12_max_sliding_window();
 
 int main() {
 
@@ -389,7 +390,8 @@ int main() {
     //test_p24_08_justify_text_lines();
     //test_p24_09_zipping();
     //test_p24_10_jump_list_copy();
-    test_p24_11_longest_valid_range();
+    //test_p24_11_longest_valid_range();
+    test_p24_12_max_sliding_window();
 
     return 0;
 }
