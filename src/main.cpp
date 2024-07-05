@@ -195,6 +195,7 @@ extern void test_p24_09_zipping();
 extern void test_p24_10_jump_list_copy();
 extern void test_p24_11_longest_valid_range();
 extern void test_p24_12_max_sliding_window();
+extern void test_p24_13_developer_min_ticket();
 
 int main() {
 
@@ -391,7 +392,8 @@ int main() {
     //test_p24_09_zipping();
     //test_p24_10_jump_list_copy();
     //test_p24_11_longest_valid_range();
-    test_p24_12_max_sliding_window();
+    //test_p24_12_max_sliding_window();
+    test_p24_13_developer_min_ticket();
 
     return 0;
 }
