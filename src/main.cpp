@@ -196,6 +196,7 @@ extern void test_p24_10_jump_list_copy();
 extern void test_p24_11_longest_valid_range();
 extern void test_p24_12_max_sliding_window();
 extern void test_p24_13_developer_min_ticket();
+extern void test_p24_14_b_search_unkonw_end();
 
 int main() {
 
@@ -393,7 +394,8 @@ int main() {
     //test_p24_10_jump_list_copy();
     //test_p24_11_longest_valid_range();
     //test_p24_12_max_sliding_window();
-    test_p24_13_developer_min_ticket();
+    //test_p24_13_developer_min_ticket();
+    test_p24_14_b_search_unkonw_end();
 
     return 0;
 }
