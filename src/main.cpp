@@ -198,6 +198,7 @@ extern void test_p24_12_max_sliding_window();
 extern void test_p24_13_developer_min_ticket();
 extern void test_p24_14_b_search_unkonw_end();
 extern void test_p18_00_graph_bootcamp();
+extern void test_p18_01_maze_search();
 
 int main() {
 
@@ -384,7 +385,8 @@ int main() {
     //test_p17_07_max_waterpool();
     //test_p17_08_max_square_in_skyline();
 
-    test_p18_00_graph_bootcamp();
+    //test_p18_00_graph_bootcamp();
+    test_p18_01_maze_search();
 
     //test_p24_01_gcd();
     //test_p24_02_min_int_not_exising_in_a();

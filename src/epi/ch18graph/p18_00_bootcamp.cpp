@@ -78,7 +78,7 @@ namespace p18_00 {
         return list<Game>();
     }
 
-    void test_bfs(const vector<Game> & v, string from, string to) {
+    void test_dfs(const vector<Game> & v, string from, string to) {
         unordered_map<string, unordered_set<string>> g = build_graph(v);
         unordered_set<string> visited;
         //dump_graph(g, true);
@@ -108,9 +108,9 @@ void test_p18_00_graph_bootcamp() {
         {"g", "h"},
         {"m", "n"},
     }; 
-    p18_00::test_bfs(v, "a", "h");
-    p18_00::test_bfs(v, "l", "h");
-    p18_00::test_bfs(v, "a", "a");
-    p18_00::test_bfs(v, "h", "a");
+    p18_00::test_dfs(v, "a", "h");
+    p18_00::test_dfs(v, "l", "h");
+    p18_00::test_dfs(v, "a", "a");
+    p18_00::test_dfs(v, "h", "a");
 
 }
