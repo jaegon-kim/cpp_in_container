@@ -8,8 +8,11 @@ extern void test_a01_02_subset_k_len();
 extern void test_a01_01_subset_all();
 extern void test_a01_03_cont_subarray();
 extern void test_a01_04_permutation();
-extern void test_a02_00_bfs_queue(); 
 
+extern void test_a02_00_bfs_queue(); 
+extern void test_a02_01_ford_fulkerson();
+
+extern void test_a03_01_2xN_tiling();
 
 // epi
 extern void test_p4_1_parity();
@@ -205,7 +208,6 @@ extern void test_p18_02_flip_area();
 extern void test_p18_03_find_closed_area();
 extern void test_p18_04_deadlock_detection();
 extern void test_p18_05_graph_copy();
-extern void test_a02_01_ford_fulkerson();
 
 int main() {
 
@@ -217,7 +219,8 @@ int main() {
     //test_a01_03_cont_subarray();
     //test_a01_04_permutation();
     //test_a02_00_bfs_queue();
-    test_a02_01_ford_fulkerson();
+    //test_a02_01_ford_fulkerson();
+    test_a03_01_2xN_tiling();
  
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
