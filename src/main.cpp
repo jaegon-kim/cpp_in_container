@@ -204,6 +204,8 @@ extern void test_p18_01_maze_search();
 extern void test_p18_02_flip_area();
 extern void test_p18_03_find_closed_area();
 extern void test_p18_04_deadlock_detection();
+extern void test_p18_05_graph_copy();
+extern void test_a02_01_ford_fulkerson();
 
 int main() {
 
@@ -215,6 +217,7 @@ int main() {
     //test_a01_03_cont_subarray();
     //test_a01_04_permutation();
     //test_a02_00_bfs_queue();
+    test_a02_01_ford_fulkerson();
  
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
@@ -391,12 +394,12 @@ int main() {
     //test_p17_07_max_waterpool();
     //test_p17_08_max_square_in_skyline();
 
-    test_p18_00_graph_bootcamp();
+    //test_p18_00_graph_bootcamp();
     //test_p18_01_maze_search();
     //test_p18_02_flip_area();
     //test_p18_03_find_closed_area();
-    test_p18_04_deadlock_detection();
-
+    //test_p18_04_deadlock_detection();
+    //test_p18_05_graph_copy();
 
     //test_p24_01_gcd();
     //test_p24_02_min_int_not_exising_in_a();
