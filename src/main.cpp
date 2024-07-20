@@ -13,6 +13,7 @@ extern void test_a02_00_bfs_queue();
 extern void test_a02_01_ford_fulkerson();
 
 extern void test_a03_01_2xN_tiling();
+extern void test_a03_02_2xN_3tile_tiling();
 
 // epi
 extern void test_p4_1_parity();
@@ -220,7 +221,8 @@ int main() {
     //test_a01_04_permutation();
     //test_a02_00_bfs_queue();
     //test_a02_01_ford_fulkerson();
-    test_a03_01_2xN_tiling();
+    //test_a03_01_2xN_tiling();
+    test_a03_02_2xN_3tile_tiling();
  
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
