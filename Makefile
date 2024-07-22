@@ -54,6 +54,7 @@ container_build = $(CONTAINER_RUNTIME) build \
 	.
 
 container_run = $(CONTAINER_RUNTIME) run \
+	--name $(project) \
 	--rm -t -h $(build_env_image) -e AT_CONTAINER=true \
 	--mount type=bind,source=$(CURDIR),target=/root/$(src_dir) -w /root/$(src_dir) \
 	$(container_run_options) \
@@ -85,6 +86,16 @@ else
 run:
 	@$(container_run) make run
 endif
+
+.PHONY: term
+ifdef AT_CONTAINER
+term:
+	$(error You can't term container at container)
+else
+term:
+	@$(CONTAINER_RUNTIME) rm -f $(project)
+endif
+
 
 .PHONY: image
 image: container_build_options := -t $(project):$(version) --target image
