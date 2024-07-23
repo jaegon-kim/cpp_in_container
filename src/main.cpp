@@ -11,6 +11,8 @@ extern void test_a01_04_permutation();
 
 extern void test_a02_00_bfs_queue(); 
 extern void test_a02_01_ford_fulkerson();
+extern void test_a02_02_cowry_assignment();
+extern void test_a02_03_city_path();
 
 extern void test_a03_01_2xN_tiling();
 extern void test_a03_02_2xN_3tile_tiling();
@@ -209,7 +211,6 @@ extern void test_p18_02_flip_area();
 extern void test_p18_03_find_closed_area();
 extern void test_p18_04_deadlock_detection();
 extern void test_p18_05_graph_copy();
-extern void test_a02_02_cowry_assignment();
 
 int main() {
 
@@ -224,7 +225,8 @@ int main() {
     //test_a02_01_ford_fulkerson();
     //test_a03_01_2xN_tiling();
     //test_a03_02_2xN_3tile_tiling();
-    test_a02_02_cowry_assignment();
+    //test_a02_02_cowry_assignment();
+    test_a02_03_city_path();
  
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
