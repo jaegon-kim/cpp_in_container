@@ -14,6 +14,7 @@ extern void test_a02_01_ford_fulkerson();
 extern void test_a02_02_cowry_assignment();
 extern void test_a02_03_city_path();
 extern void test_a02_04_city_path_exclusive_city();
+extern void test_a02_05_grid_0();
 
 extern void test_a03_01_2xN_tiling();
 extern void test_a03_02_2xN_3tile_tiling();
@@ -228,7 +229,8 @@ int main() {
     //test_a03_02_2xN_3tile_tiling();
     //test_a02_02_cowry_assignment();
     //test_a02_03_city_path();
-    test_a02_04_city_path_exclusive_city();
+    //test_a02_04_city_path_exclusive_city();
+    test_a02_05_grid_0();
  
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
