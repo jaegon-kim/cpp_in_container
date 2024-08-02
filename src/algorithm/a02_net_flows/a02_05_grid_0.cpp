@@ -236,8 +236,8 @@ namespace a02_05 {
 
     // n: # of row, m: # of col
     void test(const int input [][MAX_COL], int n, int m) {
-        memset(capa_g, sizeof(capa_g), 0);
-        memset(capa_g, sizeof(flow_g), 0);
+        memset(capa_g, 0, sizeof(capa_g));
+        memset(capa_g, 0, sizeof(flow_g));
         const_graph(input, n, m, capa_g);
         //dump(capa_g, endnode(n, m));
         int num_flow = max_flow(capa_g, flow_g, endnode(n, m), 0, endnode(n, m));
