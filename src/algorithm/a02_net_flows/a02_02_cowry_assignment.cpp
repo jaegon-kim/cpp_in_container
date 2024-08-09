@@ -95,6 +95,8 @@ namespace a02_02 {
         }
     }
 
+    // n: number of cow
+    // m: number of cowry
     size_t const_graph(int input[][N_MAX], int capa[][N_MAX], size_t n, size_t m) {
         const size_t from = 0;
         const size_t n_base = 1;
@@ -143,14 +145,21 @@ namespace a02_02 {
 
         for (size_t i = 0; q.size() && prev[to] == -1; i++) {
             size_t c = q.pop();
+            cout << "pop: " << c << endl;
+
             for (size_t j = 0; j < num_nodes; j++) {
                 if (j == c) {
                     continue;
                 }
-
-                if (!capa[c][j] || ((capa[c][j] - flow[c][j]) <= 0)) {
+                if ((capa[c][j] - flow[c][j]) <= 0) {
                     continue;
                 }
+
+                if (prev[j] != -1) {
+                    continue;
+                }
+
+                cout << j << "<-" << c << endl;
 
                 prev[j] = c;
                 if (j == to) {
@@ -165,7 +174,20 @@ namespace a02_02 {
     int max_flow(int capa[][N_MAX], int flow[][N_MAX], int prev[][N_MAX], int num_nodes) {
         int max = 0;
         for (size_t i = 0; i < 10; i++) {
-            int amount = dfs(capa, flow, prev[i], num_nodes, 0, num_nodes - 1);
+            int amount = 0;
+            if (!i) {
+                prev[i][5] = 4;
+                prev[i][4] = 1;
+                prev[i][1] = 0;
+                amount = min_capa(capa, flow, prev[i], 0, num_nodes - 1);
+            } else {
+                cout << "* capa: " << endl;
+                dump_graph(capa, num_nodes, num_nodes);
+                cout << "* flow: " << endl;
+                dump_graph(flow, num_nodes, num_nodes);
+
+                amount = dfs(capa, flow, prev[i], num_nodes, 0, num_nodes - 1);
+            }
             cout << "found amount: " << amount << endl;
             if (amount == -1) {
                 break;
@@ -206,5 +228,13 @@ void test_a02_02_cowry_assignment() {
         {1, 2}
     };
     //a02_02::test_q();
-    a02_02::test(i, 5, 5);
+    //a02_02::test(i, 5, 5);
+
+    int i_2[][N_MAX] = {
+        {2, 1, 2},
+        {1, 2},
+    };
+    //a02_02::test_q();
+    a02_02::test(i_2, 2, 2);
+
 }
