@@ -214,6 +214,7 @@ extern void test_p18_02_flip_area();
 extern void test_p18_03_find_closed_area();
 extern void test_p18_04_deadlock_detection();
 extern void test_p18_05_graph_copy();
+extern void test_a02_07_passion_kang_ho_1();
 
 int main() {
 
@@ -228,11 +229,12 @@ int main() {
     //test_a02_01_ford_fulkerson();
     //test_a03_01_2xN_tiling();
     //test_a03_02_2xN_3tile_tiling();
-    test_a02_02_cowry_assignment();
+    //test_a02_02_cowry_assignment();
     //test_a02_03_city_path();
     //test_a02_04_city_path_exclusive_city();
     //test_a02_05_grid_0();
     //test_a02_06_space_ship();
+    test_a02_07_passion_kang_ho_1();
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
