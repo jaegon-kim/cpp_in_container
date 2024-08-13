@@ -1,6 +1,6 @@
 
-// https://www.acmicpc.net/problem/11375
-// Passsion Kangho #1 (열혈강호 1)
+// https://www.acmicpc.net/problem/11376
+// Passsion Kangho #1 (열혈강호 2)
 // N: number of employ, M: number of task (1<= N, M <=1000)
 
 #include <iostream>
@@ -12,7 +12,7 @@ using namespace std;
 #define MAX_M 1000
 #define MAX_NODE (MAX_N + MAX_M + 2)
 
-namespace a02_07 {
+namespace a02_08 {
 
     template <typename T, int N>
     class Q {
@@ -93,26 +93,29 @@ namespace a02_07 {
         return n;
     }
 
-    static inline int m2node(int m, int size_n) {
-        return size_n + m;
+    static inline int m2node(int m, int size_n, int n_capa) {
+        return size_n * n_capa + m;
     }
 
-    static inline int t_node(int size_n, int size_m) {
-        return size_n + size_m + 1;
+    static inline int t_node(int size_n, int n_capa, int size_m) {
+        return size_n * n_capa + size_m + 1;
     }
 
-    static inline int size_node(int size_n, int size_m) {
-        return size_n + size_m + 2;
+    static inline int size_node(int size_n, int n_capa,  int size_m) {
+        return size_n * n_capa + size_m + 2;
     }
 
     void const_graph(const int input[][MAX_M], int capa[][MAX_NODE], int size_n, int n_capa, int s, int t) {
-        for (int i = 0; i < size_n; i++) {
-            int n = i + 1;
-            capa[s][n] = n_capa;
-            for (int j = 1; j <= input[i][0]; j++) {
-                int m_node = m2node(input[i][j], size_n);
-                capa[n][m_node] = 1;
-                capa[m_node][t] = 1;
+        for (int i = 1; i <= size_n; i++) {
+
+            for (int n = (i - 1) * n_capa + 1; n <= (i * n_capa); n++) {
+                capa[s][n] = 1;
+
+                for (int j = 1; j <= input[i - 1][0]; j++) {
+                    int m_node = m2node(input[i - 1][j], size_n, n_capa);
+                    capa[n][m_node] = 1;
+                    capa[m_node][t] = 1;
+                }
             }
         }
     }
@@ -128,11 +131,11 @@ namespace a02_07 {
         cout << endl;
     }
 
-    void dump_assignment(int g[][MAX_NODE], int size_n, int size_m) {
-        for (int n = 1; n <= size_n; n++) {
+    void dump_assignment(int g[][MAX_NODE], int size_n, int n_capa, int size_m) {
+        for (int n = 1; n <= (size_n * n_capa); n++) {
             int node_n = n2node(n);
             for (int m = 1; m <= size_m; m++) {
-                int node_m = m2node(m, size_n);
+                int node_m = m2node(m, size_n, n_capa);
                 if (g[node_n][node_m]) {
                     cout << n << "->" << m << endl;
                 }
@@ -196,7 +199,7 @@ namespace a02_07 {
 
         int job_cnt = 0;
         for(size_t i = 0; true ; i++) {
-            int amount = bfs(capa, flow, prev[i], size_node(size_n, size_m), s, t);
+            int amount = bfs(capa, flow, prev[i], size_node(size_n, 2, size_m), s, t);
             if (!amount) {
                 break;
             }
@@ -228,33 +231,43 @@ namespace a02_07 {
         memset(flow_g, 0, sizeof(capa_g));
         memset(final_g, 0, sizeof(capa_g));
 
-        const_graph(input, capa_g, size_n, n_capa, s_node(), t_node(size_n, size_m));
-        dump_graph(capa_g, size_node(size_n, size_m));
-        int r = max_job(capa_g, flow_g, prev_g, final_g, size_n, size_m, s_node(), t_node(size_n, size_m));
+        const_graph(input, capa_g, size_n, n_capa, s_node(), t_node(size_n, n_capa, size_m));
+        dump_graph(capa_g, size_node(size_n, n_capa, size_m));
+        int r = max_job(capa_g, flow_g, prev_g, final_g, size_n, size_m, s_node(), t_node(size_n, n_capa, size_m));
         cout << "r: " << r << endl;
-        dump_graph(final_g, size_node(size_n, size_m));
-        dump_assignment(final_g, size_n, size_m);
+        dump_graph(final_g, size_node(size_n, n_capa, size_m));
+        dump_assignment(final_g, size_n, n_capa, size_m);
     }
 }
 
-void test_a02_07_passion_kang_ho_1() {
+//extern void a02_07::test(const int input[][MAX_M], int size_n, int n_capa, int size_m);
+namespace a02_07 {
+    extern void test(const int input[][MAX_M], int size_n, int n_capa, int size_m);
+}
+
+
+void test_a02_08_passion_kang_ho_2() {
     PRINT_FUNC_NAME;
 
-    // const int input_0[][MAX_M] = {
-    //     {2, 1, 2},
-    //     {2, 1, 2},
-    //     {2, 1, 2},
-    //     {2, 4, 5},
-    //     {0},
-    // };
-    // a02_07::test(input_0, 5, 1, 5);
-
-    const int input_1[][MAX_M] = {
+    const int input_0[][MAX_M] = {
         {2, 1, 2},
-        {1, 1},
-        {2, 2, 3},
-        {3, 3, 4, 5},
-        {1, 1},
+        {2, 1, 2},
+        {2, 1, 2},
+        {2, 4, 5},
+        {0},
     };
-    a02_07::test(input_1, 5, 1, 5);
+    // twicing the number of capa of edge from sink to employ (N)
+    a02_07::test(input_0, 5, 2, 5);
+
+    // twiching the number of employ vertex
+    //a02_08::test(input_0, 5, 2, 5);
+
+    // const int input_1[][MAX_M] = {
+    //     {2, 1, 2},
+    //     {1, 1},
+    //     {2, 2, 3},
+    //     {3, 3, 4, 5},
+    //     {1, 1},
+    // };
+    // a02_08::test(input_1, 5, 2, 5);
 }

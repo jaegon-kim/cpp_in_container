@@ -16,6 +16,8 @@ extern void test_a02_03_city_path();
 extern void test_a02_04_city_path_exclusive_city();
 extern void test_a02_05_grid_0();
 extern void test_a02_06_space_ship();
+extern void test_a02_07_passion_kang_ho_1();
+extern void test_a02_08_passion_kang_ho_2();
 
 extern void test_a03_01_2xN_tiling();
 extern void test_a03_02_2xN_3tile_tiling();
@@ -214,7 +216,6 @@ extern void test_p18_02_flip_area();
 extern void test_p18_03_find_closed_area();
 extern void test_p18_04_deadlock_detection();
 extern void test_p18_05_graph_copy();
-extern void test_a02_07_passion_kang_ho_1();
 
 int main() {
 
@@ -234,7 +235,8 @@ int main() {
     //test_a02_04_city_path_exclusive_city();
     //test_a02_05_grid_0();
     //test_a02_06_space_ship();
-    test_a02_07_passion_kang_ho_1();
+    //test_a02_07_passion_kang_ho_1();
+    test_a02_08_passion_kang_ho_2();
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
