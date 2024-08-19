@@ -19,6 +19,7 @@ extern void test_a02_06_space_ship();
 extern void test_a02_07_passion_kang_ho_1();
 extern void test_a02_08_passion_kang_ho_2();
 extern void test_a02_09_passion_kang_ho_3();
+extern void test_a02_10_passion_kang_ho_4();
 
 extern void test_a03_01_2xN_tiling();
 extern void test_a03_02_2xN_3tile_tiling();
@@ -238,7 +239,8 @@ int main() {
     //test_a02_06_space_ship();
     //test_a02_07_passion_kang_ho_1();
     //test_a02_08_passion_kang_ho_2();
-    test_a02_09_passion_kang_ho_3();
+    //test_a02_09_passion_kang_ho_3();
+    test_a02_10_passion_kang_ho_4();
 
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
