@@ -236,11 +236,11 @@ int main() {
     //test_a02_03_city_path();
     //test_a02_04_city_path_exclusive_city();
     //test_a02_05_grid_0();
-    //test_a02_06_space_ship();
+    test_a02_06_space_ship();
     //test_a02_07_passion_kang_ho_1();
     //test_a02_08_passion_kang_ho_2();
     //test_a02_09_passion_kang_ho_3();
-    test_a02_10_passion_kang_ho_4();
+    //test_a02_10_passion_kang_ho_4();
 
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
