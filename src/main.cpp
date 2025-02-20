@@ -24,6 +24,7 @@ extern void test_a03_01_2xN_tiling();
 extern void test_a03_02_2xN_3tile_tiling();
 
 extern void test_a04_01_spaceship();
+extern void test_a04_02_min_coins();
 
 // epi
 extern void test_p4_1_parity();
@@ -243,8 +244,8 @@ int main() {
     //test_a02_09_passion_kang_ho_3();
     //test_a02_10_passion_kang_ho_4();
 
-    test_a04_01_spaceship();
-
+    //test_a04_01_spaceship();
+    test_a04_02_min_coins();
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
