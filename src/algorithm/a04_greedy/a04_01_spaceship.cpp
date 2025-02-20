@@ -8,7 +8,6 @@ namespace a04_01 {
     const static int N = 1000;
     const static int NUM_SPACESHIPS = 10000;
     const static int MAX_H = 124;
-
     // const static int N = 30;
     // const static int NUM_SPACESHIPS = 100;
     // const static int MAX_H = 62;
@@ -64,7 +63,6 @@ namespace a04_01 {
         }
     }
 
-
     void init(int m[][N], int o[][N], Spaceship s[]) {
         srand((unsigned)time(NULL));
         for (int y = 0; y < N; y++) {
@@ -79,6 +77,9 @@ namespace a04_01 {
             s[i].h = rand() % 4 + 2;
         }
         init_ship(s);
+        //for (int i = 1; i <= NUM_SPACESHIPS; i++) {
+        //    dump_ship(&s[i]);
+        //}
     }
 
     int occupiable(int y, int x, int m[][N], int o[][N], int s_w, int s_h) {
@@ -164,13 +165,11 @@ namespace a04_01 {
         for (int i = 1; i <= NUM_SPACESHIPS; i++) {
             int idx = (++ordered_s[s[i].h - 2][s[i].w - 2][0]);
             ordered_s[s[i].h - 2][s[i].w - 2][idx] = i;
-            /*
-            dump_ship(&s[i]);
-            cout << "h:" << s[i].h << ", w:" << s[i].w << ", ";
-            cout << "len: " << ordered_s[s[i].h - 2][s[i].w - 2][0] << ", ";
-            cout << "added idx: " << ordered_s[s[i].h - 2][s[i].w - 2][idx] << ", ";
-            cout << endl;
-            */
+            // dump_ship(&s[i]);
+            // cout << "h:" << s[i].h << ", w:" << s[i].w << ", ";
+            // cout << "len: " << ordered_s[s[i].h - 2][s[i].w - 2][0] << ", ";
+            // cout << "added idx: " << ordered_s[s[i].h - 2][s[i].w - 2][idx] << ", ";
+            // cout << endl;
         }
     }
 
@@ -186,31 +185,32 @@ namespace a04_01 {
 
         update_ordered_ship(s, ordered_ship);
 
-        int i = 4, j = 4;
+        int sz_set[][2] = { // sorted with score
+            {3, 3}, 
+            {3, 2}, {2, 3},
+            {2, 2},
+            {3, 1}, {1, 3},
+            {2, 1}, {1, 2},
+            {1, 1},
+            {3, 0}, {0, 3},
+            {2, 0}, {0, 2},
+            {1, 0}, {0, 1},
+            {0, 0}
+        };
 
-        while(1) {
+        for (int sz_idx = 0; sz_idx < 16; sz_idx++) {
+            int i = sz_set[sz_idx][0];
+            int j = sz_set[sz_idx][1];
 
             int len = ordered_ship[i][j][0];
+            //cout << "(i: " << i << ", " << j << ") len: " << len <<endl;
 
             for (int idx = 1; idx <= len ; idx++) {
                 int s_idx = ordered_ship[i][j][idx];
                 occupy(m, o, s, s_idx);
             }
-
-            if (!i && !j) {
-                break;
-            }
-
-            if (i > j) {
-                i--;
-            } else {
-                j--;
-            }
         }
-
     }
-
-
 
     int score(Spaceship s[]) {
         int total_score = 0;
@@ -227,8 +227,6 @@ namespace a04_01 {
         }
         return total_score;
     }
-
-
 
     void test() {
         init(map, occupied, spaceships);
