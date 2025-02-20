@@ -129,9 +129,9 @@ namespace a04_01 {
         }
     }
 
-    int occupy(int m[][N], int o[][N], Spaceship s[], int s_i) {
-        for (int y = 0; y < N; y++) {
-            for (int x = 0; x < N; x++) {
+    int occupy(int m[][N], int o[][N], Spaceship s[], int s_i, int start_x, int start_y) {
+        for (int y = start_y; y < N; y++) {
+            for (int x = start_x; x < N; x++) {
                 if (occupiable(y, x, m, o, s[s_i].w, s[s_i].h)) {
                     update_occupied(y, x, o, s[s_i].w, s[s_i].h, s_i);
                     s[s_i].y = y;
@@ -150,6 +150,7 @@ namespace a04_01 {
                     return 1;
                 } 
             }
+            start_x = 0;
         }
         return 0;
     }
@@ -175,7 +176,7 @@ namespace a04_01 {
 
     void process(int m[][N], int o[][N], Spaceship s[]) {
         for (int i = 1; i <= NUM_SPACESHIPS; i++) {
-            occupy(m, o, s, i);
+            occupy(m, o, s, i, 0, 0);
         }
     }
 
@@ -205,9 +206,20 @@ namespace a04_01 {
             int len = ordered_ship[i][j][0];
             //cout << "(i: " << i << ", " << j << ") len: " << len <<endl;
 
+            int start_x = 0, start_y = 0;
             for (int idx = 1; idx <= len ; idx++) {
                 int s_idx = ordered_ship[i][j][idx];
-                occupy(m, o, s, s_idx);
+                if (!occupy(m, o, s, s_idx, start_x, start_y)) {
+                    break;
+                }
+
+                if (!s[s_idx].orientation) {
+                    start_x = s[s_idx].x + s[s_idx].w;
+                } else {
+                    start_x = s[s_idx].x + s[s_idx].h;
+                }
+                start_y = s[s_idx].y;
+
             }
         }
     }
@@ -231,20 +243,20 @@ namespace a04_01 {
     void test() {
         init(map, occupied, spaceships);
         
-        process(map, occupied, spaceships);
-        //dump_map(map);
-        //cout << endl;
-        //dump_map(occupied);
-        cout << "score: " << score(spaceships) << endl;
-
-        init_map(occupied);
-        init_ship(spaceships);
+        // process(map, occupied, spaceships);
+        // //dump_map(map);
+        // //cout << endl;
+        // //dump_map(occupied);
+        // cout << "score: " << score(spaceships) << endl;
+        // init_map(occupied);
+        // init_ship(spaceships);
 
         process_ordered(map, occupied, spaceships);
         //dump_map(map);
         //cout << endl;
         //dump_map(occupied);
         cout << "score: " << score(spaceships) << endl;
+
     }
 }
 
