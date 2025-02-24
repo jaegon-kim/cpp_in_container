@@ -37,6 +37,8 @@ namespace p5_8 {
         }
     }
 
+    // 'test_p17_01_ex_1_assign_2_job'의 quick sort를 참조 할 것. 아래 quick sort구현 보다 더 간결하다 !!
+
     // O(N) partition 
     int partition(vector<int> & v, int pivot_idx, int start_idx, int end_idx) {
         int pivot = v[pivot_idx];

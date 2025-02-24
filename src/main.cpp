@@ -192,6 +192,7 @@ extern void test_p16_10_n_stair_k_steps();
 extern void test_p16_11_pretty_text_lines();
 extern void test_p16_12_inc_permutation();
 extern void test_p17_01_assign_2_job();
+extern void test_p17_01_ex_1_assign_2_job();
 extern void test_p17_02_min_latency();
 extern void test_p17_03_min_cover_all();
 extern void test_p17_00_bootcamp();
@@ -245,7 +246,7 @@ int main() {
     //test_a02_10_passion_kang_ho_4();
 
     //test_a04_01_spaceship();
-    test_a04_02_min_coins();
+    //test_a04_02_min_coins();
 
     // Prolem solving in EPI(Elements of Programming Interview in C++)
     //test_p4_1_parity();
@@ -413,6 +414,7 @@ int main() {
     //test_p16_11_pretty_text_lines();
     //test_p16_12_inc_permutation();
     //test_p17_01_assign_2_job();
+    test_p17_01_ex_1_assign_2_job(); 
     //test_p17_02_min_latency();
     //test_p17_03_min_cover_all();
     //test_p17_00_bootcamp();
