@@ -12,6 +12,7 @@ extern void test_a01_04_permutation();
 extern void test_a02_00_bfs_queue(); 
 extern void test_a02_01_ford_fulkerson();
 extern void test_a02_02_cowry_assignment();
+extern void test_a02_02_ex_1_cowry_assignment();
 extern void test_a02_03_city_path();
 extern void test_a02_04_city_path_exclusive_city();
 extern void test_a02_05_grid_0();
@@ -236,6 +237,8 @@ int main() {
     //test_a03_01_2xN_tiling();
     //test_a03_02_2xN_3tile_tiling();
     //test_a02_02_cowry_assignment();
+    test_a02_02_ex_1_cowry_assignment();
+
     //test_a02_03_city_path();
     //test_a02_04_city_path_exclusive_city();
     //test_a02_05_grid_0();
@@ -414,7 +417,7 @@ int main() {
     //test_p16_11_pretty_text_lines();
     //test_p16_12_inc_permutation();
     //test_p17_01_assign_2_job();
-    test_p17_01_ex_1_assign_2_job(); 
+    //test_p17_01_ex_1_assign_2_job(); 
     //test_p17_02_min_latency();
     //test_p17_03_min_cover_all();
     //test_p17_00_bootcamp();
