@@ -7,220 +7,192 @@ using namespace std;
 #define N_MAX 200
 #define M_MAX 200
 #define V_MAX (N_MAX + M_MAX + 2)
-#define Q_BUF_SZ (V_MAX + 1)
 #define PATH_MAX 200
 
 namespace a02_02_ex_1 {
 
-    int capa_g[V_MAX][V_MAX];
-    int flow_g[V_MAX][V_MAX];
-    int back_log_g[PATH_MAX][V_MAX];
-
-    int cow2v(int c) {
-        return c;
-    }
-
-    int v2cow(int v) {
-        return v;
-    }
-
-    int cowry2v(int c, int n) {
-        return c + n;
-    }
-
-    int v2cowry(int v, int n) {
-        return v - n;
-    }
-
-    int sink(int n, int m) {
-        return n + m + 1;
-    }
-
-    int v_size(int n, int m) {
-        return sink(n, m) + 1;
-    }
-
-    void dump_graph(int v[][V_MAX], int n) {
-
-        cout << "   ";
-        for (int j = 0; j < n; j++) {
-            cout << j << ", ";
-        }
-        cout << endl;
-
-        cout << "   ";
-        for (int j = 0; j < n; j++) {
-            cout << "---";
-        }
-        cout << endl;
-
-        for (int i = 0; i < n; i++) {
-            cout << i << "| ";
-            for (int j = 0; j < n; j++) {
-                cout << v[i][j] << ", ";
-            }
-            cout << endl;
-        }
-    }
-
+    template <int BUF_SIZE>
     class Q {
         public:
-            bool empty() {
-                return head == tail;
-            }
-
-            bool full() {
-                return (tail + 1) % Q_BUF_SZ == head;
-            }
-
-            bool push(int v) {
-                if (full()) {
-                    return false;
+            size_t size() {
+                if (head > tail) {
+                    return tail + BUF_SIZE - head;
+                } else {
+                    return tail - head;
                 }
+            }
 
+            void push(int v) {
+                if (size() == (BUF_SIZE - 1)) {
+                    return;
+                }
                 buf[tail] = v;
-                tail = (tail + 1) % Q_BUF_SZ;
-                return true;
+                tail = (tail + 1) % BUF_SIZE;
             }
 
             int pop() {
-                if (empty()) {
+                if (!size()) {
                     return buf[head];
                 }
                 int r = buf[head];
-                head = (head + 1) % Q_BUF_SZ;
+                head = (head + 1) % BUF_SIZE;
                 return r;
             }
 
-            int size() {
-                if (head <= tail) {
-                    return tail - head;
-                } else {
-                    return (tail + Q_BUF_SZ - head);
-                }
-            }
-
             void dump() {
-                cout << "(h: " << head << ", t: " << tail << ", s: " << size() << ") ";
+                cout << "(h:" << head << ", t: " << tail << ", size: " << size() << ") {";
                 int len = size();
                 for (int i = 0; i < len; i++) {
-                    cout << buf[(head + i) % Q_BUF_SZ] << ", ";
+                    cout << buf[(head + i) % BUF_SIZE] << ", ";
                 }
-                cout << endl;
+                cout << "}" << endl;
             }
 
         private:
-            int buf[Q_BUF_SZ];
             int head = 0;
             int tail = 0;
+            int buf[BUF_SIZE];
     };
 
     void test_q() {
-        Q q;
+        Q<3> q;
         q.dump();
-        for (int i = 0; i < Q_BUF_SZ + 1; i++ ) {
+        for (int i = 0; i < 4; i++) {
             q.push(i);
-            q.dump();            
-        }
-        for (int i = 0; i < Q_BUF_SZ + 1; i++ ) {
-            cout << "pop: " << q.pop() << endl;
             q.dump();
-        } 
-        for (int i = 0; i < Q_BUF_SZ + 1; i++ ) {
-            q.push(i);
-            q.dump();            
         }
+
+        for (int i = 0; i < 1; i++) {
+            cout << "pop: " << q.pop() << " ";
+            q.dump();
+        }
+
+        for (int i = 0; i < 1; i++) {
+            q.push(i);
+            q.dump();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            cout << "pop: " << q.pop() << " ";
+            q.dump();
+        }
+
     }
 
-    void const_graph(int cow[][M_MAX], int capa[][V_MAX], int flow[][V_MAX], int n, int m) {
-
+    void const_graph(int cow[][M_MAX], int capa[][V_MAX], int n, int m) {
         for (int i = 0; i < n; i++) {
             capa[0][i + 1] = 1;
-            for (int j = 0; j < cow[i][0]; j++) {
-                capa[cow2v(i + 1)][cowry2v(cow[i][j + 1], n)] = 1;
-            }            
+
+            int sz = cow[i][0];
+            for (int j = 0; j < sz; j++) {
+                capa[i + 1][n + cow[i][j + 1]] = 1;
+            }
         }
 
         for (int i = 0; i < m; i++) {
-            capa[cowry2v(i + 1, n)][sink(n, m)] = 1;
+            capa[n + i + 1][n + m + 1] = 1;
         }
     }
 
-    bool bfs(int back_log[V_MAX], int capa[][V_MAX], int flow[][V_MAX], int n, int m, int start, int sink) {
-
-        for (int i = 0; i < v_size(n, m); i++) {
-            back_log[i] = -1;
+    void dump_graph(int g[][V_MAX], int sz) {
+        cout << "   ";
+        for (int i = 0; i < sz; i++) {
+            cout << i << ", ";
         }
-
-        Q q;
-        q.push(start);
-
-        while(!q.empty()) {
-            int c = q.pop();
-            if (c == sink) {
-                cout << "found" << endl;
-                return true; 
-            }
-            for (int i = 0; i < v_size(n, m); i++) {
-                if (i == c || back_log[i] != -1) {
-                    continue;
-                }
-                if ((capa[c][i] - flow[c][i]) > 0) {
-                    back_log[i] = c;
-                    q.push(i);
-                }
-            }
+        cout << endl;
+        cout << "   ";
+        for (int i = 0; i < sz; i++) {
+            cout << "---";
         }
-        cout << "not found" << endl;
-        return false;
-    }    
-
-    int min_capa(int back_log[V_MAX], int start, int sink, int capa[][V_MAX], int flow[][V_MAX]) {
-        int c = sink;
-        int min = 0x7FFFFFFF;
-        while(c != start) {
-            cout << c << "<-";
-            int p = back_log[c];
-
-            int avail_capa = capa[p][c] - flow[p][c];
-            if (avail_capa < min) {
-                min = avail_capa;
+        cout << endl;
+        for (int i = 0; i < sz; i++) {
+            cout << i << "| ";
+            for (int j = 0; j < sz; j++) {
+                cout << g[i][j] <<  ", ";
             }
-            c = p;
+            cout << endl;
         }
-        cout << c << endl;
+        cout << endl;
+    }
+
+    int min_capa(int capa[][V_MAX], int flow[][V_MAX], int path[], int sz) {
+        int c = sz - 1;
+        int min = 0X7FFFFFFF;
+        while (c != 0) {
+            int prev = path[c];
+            int a = capa[prev][c] - flow[prev][c];
+            if (a < min) {
+                min = a;
+            }
+            c = prev;
+        }
         return min;
     }
 
-    void update_flow(int back_log[V_MAX], int start, int sink, int flow[][V_MAX], int min) {
-        int c = sink;
-        while(c != start) {
-            int p = back_log[c];
-            flow[p][c] += min;
-            flow[c][p] -= min;
-            c = p;
+    void update_flow(int flow[][V_MAX], int path[], int sz, int min_c) {
+        int c = sz - 1;
+        while (c != 0) {
+            int prev = path[c];
+            flow[prev][c] += min_c;
+            flow[c][prev] -= min_c;
+            c = prev;
         }
+    }
+
+
+    bool dfs(int capa[][V_MAX], int flow[][V_MAX], int path[], int sz) {
+
+        for (int i = 0; i < sz; i++) {
+            path[i] = -1;
+        }
+        Q<V_MAX> q;
+        q.push(0);
+
+        while(q.size()) {
+            int c = q.pop();
+            if (c == (sz - 1)) {
+                return true;
+            }
+
+            for (int i = 0; i < sz; i++) {
+                if ((i == c) || (path[i] != -1)) {
+                    continue;
+                }
+
+                if ((capa[c][i] - flow[c][i]) > 0 ) {
+                    q.push(i);
+                    path[i] = c;
+                }
+            }
+        }
+        return false;
+    }
+    
+    int capa_g[V_MAX][V_MAX];
+    int flow_g[V_MAX][V_MAX];
+    int path_g[V_MAX][V_MAX];
+
+    int max_assign(int capa[][V_MAX], int flow[][V_MAX], int path[][V_MAX], int sz) {
+        int total_c = 0;
+        for (int i = 0; i < sz; i++) {
+            if (!dfs(capa, flow, path[i], sz)) {
+                return total_c;
+            }
+            int min_c = min_capa(capa, flow, path[i], sz);
+            update_flow(flow, path[i], sz, min_c);
+            total_c += min_c;
+        }
+        return -1;        
     }
 
     void test(int cow[][M_MAX], int n, int m) {
         memset(capa_g, 0, sizeof(capa_g));
         memset(flow_g, 0, sizeof(flow_g));
-        const_graph(cow, capa_g, flow_g, n, m);
-        dump_graph(capa_g, v_size(n, m));
 
-        int total_capa = 0;
-        for (int i = 0; i < 100; i++) {
-            bool found = bfs(back_log_g[i], capa_g, flow_g, n, m, 0, sink(n, m));
-            if (!found) {
-                break;
-            }
-            int min = min_capa(back_log_g[i], 0, sink(n, m), capa_g, flow_g);
-            total_capa += min;
-            //cout << min << endl;
-            update_flow(back_log_g[i], 0, sink(n, m), flow_g, min);
-        }
-
-        cout << "max capa: " << total_capa << endl;
+        const_graph(cow, capa_g, n, m);
+        //dump_graph(capa_g, n + m + 2);
+        int r = max_assign(capa_g, flow_g, path_g, n + m + 2);
+        cout << "max assign: " << r << endl;
     }
 
 }
