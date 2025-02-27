@@ -141,6 +141,7 @@ extern void test_p12_09_longest_cont_num_seq();
 extern void test_p12_10_find_appended_words();
 extern void test_p12_11_collatz_conjecture();
 extern void test_p13_00_sort_bootcamp();
+extern void test_p13_00_quick_sort();
 extern void test_p13_01_intersection_of_sorted_vec();
 extern void test_p13_02_merge_sorted();
 extern void test_p13_03_h_index();
@@ -237,7 +238,7 @@ int main() {
     //test_a03_01_2xN_tiling();
     //test_a03_02_2xN_3tile_tiling();
     //test_a02_02_cowry_assignment();
-    test_a02_02_ex_1_cowry_assignment();
+    //test_a02_02_ex_1_cowry_assignment();
 
     //test_a02_03_city_path();
     //test_a02_04_city_path_exclusive_city();
@@ -365,6 +366,7 @@ int main() {
     //test_p12_10_find_appended_words();
     //test_p12_11_collatz_conjecture();
     //test_p13_00_sort_bootcamp();
+    test_p13_00_quick_sort();
     //test_p13_01_intersection_of_sorted_vec();
     //test_p13_02_merge_sorted();
     //test_p13_03_h_index();

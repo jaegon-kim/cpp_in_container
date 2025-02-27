@@ -35,11 +35,11 @@ namespace p17_01_ex_1 {
         int b_c = e;
 
         while(s_c != b_c) {
-            while (arr[s_c] < arr[p] && s_c < b_c) {
+            while (arr[s_c] <= arr[p] && s_c < b_c) {
                 s_c++;
             }
 
-            while(arr[p] < arr[b_c] && s_c < b_c) {
+            while(arr[p] <= arr[b_c] && s_c < b_c) {
                 b_c--;
             }
             swap(arr, s_c, b_c);
